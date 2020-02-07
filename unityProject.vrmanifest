@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.emergingtech_vrproject.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Scmir\\Documents\\GAME DESIGN 1 - SEM 4\\Emerging Technology\\EmergingTech_VrProject\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "EmergingTech_VrProject [Testing]"
+        }
+      }
+    }
+  ]
+}
