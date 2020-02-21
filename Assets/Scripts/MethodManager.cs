@@ -3,21 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
 
 public class MethodManager : MonoBehaviour
 {
-    public List<VRButton> listButtons = new List<VRButton>();
-    //public GameObject buttonHolder;
+    //public List<VRButton> listButtons = new List<VRButton>();
+    public GameObject buttonHolder;
+    public GameObject sphereHolder;
+    public Transform player;
 
     // Start is called before the first frame update
     void Start() {
-        //List<VRButton> listButtons = buttonHolder.GetComponentsInChildren<VRButton>();
+        List<VRButton> listButtons = buttonHolder.GetComponentsInChildren<VRButton>().ToList();
 
         // List of methods to be called by the in-game pannels
         List<UnityAction<VRButton>> listActions = new List<UnityAction<VRButton>> {
-            DoFirstThing,
-            DoSecondThing,
-            DoThirdThing
+            DropSpheres,
+            RotatePlayer
         };
 
         // Randomize the methods
@@ -37,6 +39,23 @@ public class MethodManager : MonoBehaviour
             int index = i % unityActions.Count;
             button.ButtonListeners.AddListener(unityActions[index]);
         }
+    }
+
+    /// <summary>
+    /// Have spheres drop from the ceiling
+    /// </summary>
+    /// <param name="button"></param>
+    void DropSpheres(VRButton button) {
+        sphereHolder.SetActive(true);
+    }
+
+    /// <summary>
+    /// Rotate the player away from the panel
+    /// </summary>
+    /// <param name="button"></param>
+    void RotatePlayer(VRButton button) {
+        float randomNum = UnityEngine.Random.Range(160f, 200f);
+        player.localRotation *= Quaternion.Euler(0f, randomNum, 0f);
     }
 
     public void DoFirstThing(VRButton button) {
