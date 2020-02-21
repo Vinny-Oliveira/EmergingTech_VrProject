@@ -604,25 +604,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 70c66109a93f33a4ead799f58a6b9ef5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
---- !u!1 &626857703 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 127480, guid: 1dc896f94592ffd48822010f3fb3eebb,
-    type: 3}
-  m_PrefabInstance: {fileID: 626857702}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &626857705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626857703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a69605d9eb867b47972527053b94c95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Txt_TestMsg: {fileID: 0}
 --- !u!114 &626857706 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb,
@@ -1167,7 +1148,7 @@ PrefabInstance:
     - target: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
       propertyPath: ButtonListeners.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1244505754}
+      objectReference: {fileID: 0}
     - target: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
       propertyPath: ButtonListeners.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayMessage
@@ -1178,25 +1159,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
---- !u!1 &1244505752 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 127480, guid: 1dc896f94592ffd48822010f3fb3eebb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1244505751}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1244505754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244505752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a69605d9eb867b47972527053b94c95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Txt_TestMsg: {fileID: 0}
 --- !u!114 &1244505755 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb,
@@ -1561,6 +1523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Txt_TestMsg: {fileID: 128481264}
+  num: 0
 --- !u!1001 &2075446971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1647,7 +1610,7 @@ PrefabInstance:
     - target: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
       propertyPath: ButtonListeners.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2075446974}
+      objectReference: {fileID: 0}
     - target: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
       propertyPath: ButtonListeners.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayMessage
@@ -1662,25 +1625,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dfe499413b9e65e409dcfaa1013609fb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
---- !u!1 &2075446972 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 127480, guid: 1dc896f94592ffd48822010f3fb3eebb,
-    type: 3}
-  m_PrefabInstance: {fileID: 2075446971}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2075446974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075446972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a69605d9eb867b47972527053b94c95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Txt_TestMsg: {fileID: 0}
 --- !u!114 &2075446975 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb,

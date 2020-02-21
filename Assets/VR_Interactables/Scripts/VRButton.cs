@@ -8,13 +8,7 @@ using System;
 /// VR button event. Used for registering callbacks in the editor
 /// </summary>
 [System.Serializable]
-public class VRButtonEvent : UnityEvent<VRButton>
-{
-    //internal void AddListener(MethodManager.MyMethod myMethod)
-    //{
-    //    Debug.Log("TEST TEST TEST");
-    //}
-}
+public class VRButtonEvent : UnityEvent<VRButton> {}
 
 /// <summary>
 /// VR Button. Behaves like a UI button, but exists as a physical button for you to push in VR
@@ -30,16 +24,6 @@ public class VRButton : VRInteractable {
 	/// Controllers currently interacting with the button
 	/// </summary>
 	List<VRGripper> ActiveControllers = new List<VRGripper> ();
-
-    //private void Start()
-    //{
-    //    ButtonListeners.AddListener(DoFirstThing);
-    //}
-
-    //public void DoFirstThing(VRButton vRButton)
-    //{
-    //    Debug.Log("1st thing done");
-    //}
 
     void OnTriggerEnter(Collider _collider)
 	{	
