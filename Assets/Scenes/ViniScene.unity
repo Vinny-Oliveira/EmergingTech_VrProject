@@ -574,10 +574,6 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: -1.7000055
       objectReference: {fileID: 0}
-    - target: {fileID: 2318452, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 70c66109a93f33a4ead799f58a6b9ef5, type: 2}
     - target: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
       propertyPath: ButtonListeners.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -593,15 +589,19 @@ PrefabInstance:
     - target: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
       propertyPath: ButtonListeners.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 626857705}
+      objectReference: {fileID: 165397202}
     - target: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
       propertyPath: ButtonListeners.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisplayMessage
+      value: DoFirstThing
       objectReference: {fileID: 0}
     - target: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
       propertyPath: ButtonListeners.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2318452, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 70c66109a93f33a4ead799f58a6b9ef5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
 --- !u!1 &626857703 stripped
@@ -1632,10 +1632,6 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: -1.7000055
       objectReference: {fileID: 0}
-    - target: {fileID: 2318452, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: dfe499413b9e65e409dcfaa1013609fb, type: 2}
     - target: {fileID: 11496990, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
       propertyPath: ButtonListeners.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -1660,6 +1656,10 @@ PrefabInstance:
       propertyPath: ButtonListeners.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2318452, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dfe499413b9e65e409dcfaa1013609fb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc896f94592ffd48822010f3fb3eebb, type: 3}
 --- !u!1 &2075446972 stripped

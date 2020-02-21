@@ -5,39 +5,34 @@ using UnityEngine;
 
 public class MethodManager : MonoBehaviour
 {
-    delegate void MyMethod();
+    public delegate void MyMethod(VRButton button);
     public List<VRButton> listButtons = new List<VRButton>();
     
     // Start is called before the first frame update
     void Start() {
-        List<MyMethod> listMethods = new List<MyMethod>();
-
-        listMethods.Add(DoFirstThing);
-        listMethods.Add(DoSecondThing);
-        listMethods.Add(DoThirdThing);
-
+        List<MyMethod> listMethods = new List<MyMethod> {
+            DoFirstThing,
+            DoSecondThing,
+            DoThirdThing
+        };
+        
         ListRandomizer.Randomize(listMethods);
 
         for (int i = 0; i < listButtons.Count; i++) {
             VRButton button = listButtons[i];
-            button.ButtonListeners.AddListener(DoFirstThing);
+            //button.ButtonListeners.AddListener(listMethods[i]);
         }
     }
 
-    private void DoFirstThing(VRButton arg0)
-    {
-        throw new NotImplementedException();
-    }
-
-    void DoFirstThing() {
+    public void DoFirstThing(VRButton button) {
         Debug.Log("1st thing done");
     }
 
-    void DoSecondThing() {
+    void DoSecondThing(VRButton button) {
         Debug.Log("2nd thing done");
     }
 
-    void DoThirdThing() {
+    void DoThirdThing(VRButton button) {
         Debug.Log("3rd thing done");
     }
 }

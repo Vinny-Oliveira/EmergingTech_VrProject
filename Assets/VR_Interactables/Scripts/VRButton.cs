@@ -2,12 +2,19 @@
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 /// <summary>
 /// VR button event. Used for registering callbacks in the editor
 /// </summary>
 [System.Serializable]
-public class VRButtonEvent : UnityEvent<VRButton> {}
+public class VRButtonEvent : UnityEvent<VRButton>
+{
+    //internal void AddListener(MethodManager.MyMethod myMethod)
+    //{
+    //    Debug.Log("TEST TEST TEST");
+    //}
+}
 
 /// <summary>
 /// VR Button. Behaves like a UI button, but exists as a physical button for you to push in VR
@@ -17,14 +24,24 @@ public class VRButton : VRInteractable {
 	/// <summary>
 	/// Callbacks for button pressed event
 	/// </summary>
-	public VRButtonEvent ButtonListeners;
+	public VRButtonEvent ButtonListeners = new VRButtonEvent();
 
 	/// <summary>
 	/// Controllers currently interacting with the button
 	/// </summary>
 	List<VRGripper> ActiveControllers = new List<VRGripper> ();
 
-	void OnTriggerEnter(Collider _collider)
+    //private void Start()
+    //{
+    //    ButtonListeners.AddListener(DoFirstThing);
+    //}
+
+    //public void DoFirstThing(VRButton vRButton)
+    //{
+    //    Debug.Log("1st thing done");
+    //}
+
+    void OnTriggerEnter(Collider _collider)
 	{	
 		if (Interactable == true && _collider.name == "Switch") { // If the button hit's the contact switch it has been pressed
 			TriggerButton ();
