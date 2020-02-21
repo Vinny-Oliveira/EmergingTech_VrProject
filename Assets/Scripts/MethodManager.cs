@@ -7,9 +7,12 @@ using UnityEngine.Events;
 public class MethodManager : MonoBehaviour
 {
     public List<VRButton> listButtons = new List<VRButton>();
+    //public GameObject buttonHolder;
 
     // Start is called before the first frame update
     void Start() {
+        //List<VRButton> listButtons = buttonHolder.GetComponentsInChildren<VRButton>();
+
         // List of methods to be called by the in-game pannels
         List<UnityAction<VRButton>> listActions = new List<UnityAction<VRButton>> {
             DoFirstThing,
