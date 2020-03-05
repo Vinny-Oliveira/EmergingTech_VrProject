@@ -3,7 +3,7 @@
 /* Randomize the order of items in a list */
 public class ListRandomizer {
 
-    public static void Randomize<T>(List<T> listItems) {
+    public static void Randomize<T>(ref List<T> listItems) {
         System.Random rand = new System.Random();
 
         // For each spot in the list, pick a random item to swap into that spot.

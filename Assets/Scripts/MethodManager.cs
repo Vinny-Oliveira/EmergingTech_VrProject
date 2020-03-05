@@ -23,17 +23,18 @@ public class MethodManager : MonoBehaviour
         };
 
         // Randomize the methods
-        ListRandomizer.Randomize(listActions);
+        ListRandomizer.Randomize(ref listActions);
 
         // Populate the buttons with the methods
-        PopulateButtons(listButtons, listActions);
+        PopulateButtons(ref listButtons, ref listActions);
     }
 
     /// <summary>
     /// Populate the buttons of a list with methods of a second list
     /// </summary>
+    /// <param name="vrButtons"></param>
     /// <param name="unityActions"></param>
-    void PopulateButtons(List<VRButton> vrButtons, List<UnityAction<VRButton>> unityActions) { 
+    void PopulateButtons(ref List<VRButton> vrButtons, ref List<UnityAction<VRButton>> unityActions) { 
         for (int i = 0; i < vrButtons.Count; i++) {
             VRButton button = vrButtons[i];
             int index = i % unityActions.Count;
