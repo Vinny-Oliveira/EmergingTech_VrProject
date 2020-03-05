@@ -19,7 +19,8 @@ public class MethodManager : MonoBehaviour
         // List of methods to be called by the in-game pannels
         List<UnityAction<VRButton>> listActions = new List<UnityAction<VRButton>> {
             DropSpheres,
-            RotatePlayer
+            RotatePlayer,
+            DoFirstThing
         };
 
         // Randomize the methods
