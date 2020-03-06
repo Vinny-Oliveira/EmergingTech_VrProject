@@ -25,7 +25,7 @@ public class MethodManager : MonoBehaviour
 
         //listFire = fireHolder.GetComponentsInChildren<Transform>().ToList();
         fireHolder.GetComponentsInChildren<Transform>(listFire);
-        listFire.RemoveAt(0);
+        listFire.RemoveAt(0); // Remove parent
 
         // List of methods to be called by the in-game pannels
         List<UnityAction<VRButton>> listActions = new List<UnityAction<VRButton>> {
@@ -61,6 +61,7 @@ public class MethodManager : MonoBehaviour
     /// <param name="button"></param>
     void DropSpheres(VRButton button) {
         sphereHolder.SetActive(true);
+        Debug.Log("Balls");
     }
 
     /// <summary>
@@ -70,6 +71,7 @@ public class MethodManager : MonoBehaviour
     void RotatePlayer(VRButton button) {
         float randomNum = UnityEngine.Random.Range(160f, 200f);
         player.localRotation *= Quaternion.Euler(0f, randomNum, 0f);
+        Debug.Log("Rotate");
     }
 
     public void ExplodeObject(VRButton button) {
@@ -79,11 +81,6 @@ public class MethodManager : MonoBehaviour
     public void SetFireOff(VRButton button) {
         listFire.ElementAt(0).gameObject.SetActive(false);
         listFire.RemoveAt(0);
+        Debug.Log("Fire Off");
     }
-
-    //[ContextMenu("FIRE OFF")]
-    //public void SetFireOff() {
-    //    listFire.ElementAt(0).gameObject.SetActive(false);
-    //    listFire.RemoveAt(0);
-    //}
 }
