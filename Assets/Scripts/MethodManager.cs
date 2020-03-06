@@ -31,6 +31,7 @@ public class MethodManager : MonoBehaviour
         List<UnityAction<VRButton>> listActions = new List<UnityAction<VRButton>> {
             DropSpheres,
             ExplodeObject,
+            SetFireOff,
             SetFireOff
         };
 
@@ -81,5 +82,6 @@ public class MethodManager : MonoBehaviour
         listFire.ElementAt(0).gameObject.SetActive(false);
         listFire.RemoveAt(0);
         Debug.Log("Fire Off");
+        button.Interactable = false;
     }
 }
