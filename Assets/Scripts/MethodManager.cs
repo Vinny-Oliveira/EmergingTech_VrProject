@@ -10,17 +10,29 @@ public class MethodManager : MonoBehaviour
     //public List<VRButton> listButtons = new List<VRButton>();
     public GameObject buttonHolder;
     public GameObject sphereHolder;
+    public GameObject fireHolder;
+
+    public GameObject ExplodingObj;
+
     public Transform player;
+
+    [SerializeField]
+    List<Transform> listFire = new List<Transform>();
 
     // Start is called before the first frame update
     void Start() {
         List<VRButton> listButtons = buttonHolder.GetComponentsInChildren<VRButton>().ToList();
 
+        //listFire = fireHolder.GetComponentsInChildren<Transform>().ToList();
+        fireHolder.GetComponentsInChildren<Transform>(listFire);
+        listFire.RemoveAt(0);
+
         // List of methods to be called by the in-game pannels
         List<UnityAction<VRButton>> listActions = new List<UnityAction<VRButton>> {
             DropSpheres,
             RotatePlayer,
-            DoFirstThing
+            ExplodeObject,
+            SetFireOff
         };
 
         // Randomize the methods
@@ -60,15 +72,18 @@ public class MethodManager : MonoBehaviour
         player.localRotation *= Quaternion.Euler(0f, randomNum, 0f);
     }
 
-    public void DoFirstThing(VRButton button) {
-        Debug.Log("1st thing done");
+    public void ExplodeObject(VRButton button) {
+        Debug.Log("Explosion");
     }
 
-    void DoSecondThing(VRButton button) {
-        Debug.Log("2nd thing done");
+    public void SetFireOff(VRButton button) {
+        listFire.ElementAt(0).gameObject.SetActive(false);
+        listFire.RemoveAt(0);
     }
 
-    void DoThirdThing(VRButton button) {
-        Debug.Log("3rd thing done");
-    }
+    //[ContextMenu("FIRE OFF")]
+    //public void SetFireOff() {
+    //    listFire.ElementAt(0).gameObject.SetActive(false);
+    //    listFire.RemoveAt(0);
+    //}
 }
