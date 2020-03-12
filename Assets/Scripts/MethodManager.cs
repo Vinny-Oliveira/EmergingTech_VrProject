@@ -16,23 +16,37 @@ public class MethodManager : MonoBehaviour
 
     public Transform player;
 
+    // Winning condition sequence
+    bool isPanel_Open = false;
+    bool isPressureReleased = false;
+    bool isDoorOpen = false;
+
     [SerializeField]
     List<Transform> listFire = new List<Transform>();
 
     // Start is called before the first frame update
     void Start() {
+        // Reset winning conditions
+        isPanel_Open = false;
+        isPressureReleased = false;
+        isDoorOpen = false;
+
+        // Reset button list
         List<VRButton> listButtons = buttonHolder.GetComponentsInChildren<VRButton>().ToList();
 
         //listFire = fireHolder.GetComponentsInChildren<Transform>().ToList();
         fireHolder.GetComponentsInChildren<Transform>(listFire);
         listFire.RemoveAt(0); // Remove parent
 
-        // List of methods to be called by the in-game pannels
+        // List of methods to be called by the in-game panels
         List<UnityAction<VRButton>> listActions = new List<UnityAction<VRButton>> {
             DropSpheres,
             ExplodeObject,
             SetFireOff,
-            SetFireOff
+            SetFireOff,
+            OpenPanel,
+            ReleasePressure,
+            OpenDoors
         };
 
         // Randomize the methods
@@ -54,6 +68,8 @@ public class MethodManager : MonoBehaviour
             button.ButtonListeners.AddListener(unityActions[index]);
         }
     }
+
+    #region EVENT_FUNCTIONS
 
     /// <summary>
     /// Have spheres drop from the ceiling
@@ -84,4 +100,50 @@ public class MethodManager : MonoBehaviour
         Debug.Log("Fire Off");
         button.Interactable = false;
     }
+
+    void PlayDisasterAnimation(VRButton button) { 
+        // TODO: Play disaster animation on the security panels
+    }
+
+    #endregion
+
+    #region BEEPS_AND_BOOPS_FUNCTIONS
+
+    void PlayButtonSound(VRButton button) {
+        // TODO: Add a beep and boop sound
+    }
+
+    #endregion
+
+    #region WINNING_CONDITION_FUNCTIONS
+
+    void OpenPanel(VRButton button) {
+        // TODO: Open the panel
+        isPanel_Open = true;
+        Debug.Log("Panel door is open");
+    }
+
+    void ReleasePressure(VRButton button) {
+        if (!isPanel_Open) {
+            PlayButtonSound(button);
+            return;
+        }
+
+        // TODO: Release the preasure of the pipe
+        isPressureReleased = true;
+        Debug.Log("Pipe preassure has been released");
+    }
+
+    void OpenDoors(VRButton button) { 
+        if (!isPanel_Open || !isPressureReleased) {
+            PlayButtonSound(button);
+            return;
+        }
+
+        // TODO: Open the doors and win the game
+        isDoorOpen = true;
+        Debug.Log("Exit doors are open");
+    }
+
+    #endregion
 }
