@@ -10,9 +10,9 @@ public class MethodManager : MonoBehaviour
     //public List<VRButton> listButtons = new List<VRButton>();
     public GameObject buttonHolder;
     public GameObject sphereHolder;
-    public GameObject fireHolder;
+    //public GameObject fireHolder;
 
-    public GameObject ExplodingObj;
+    //public GameObject ExplodingObj;
 
     public Transform player;
 
@@ -21,8 +21,8 @@ public class MethodManager : MonoBehaviour
     bool isPressureReleased = false;
     bool isDoorOpen = false;
 
-    [SerializeField]
-    List<Transform> listFire = new List<Transform>();
+    //[SerializeField]
+    //List<Transform> listFire = new List<Transform>();
 
     // Start is called before the first frame update
     void Start() {
@@ -34,9 +34,9 @@ public class MethodManager : MonoBehaviour
         // Reset button list
         List<VRButton> listButtons = buttonHolder.GetComponentsInChildren<VRButton>().ToList();
 
-        //listFire = fireHolder.GetComponentsInChildren<Transform>().ToList();
-        fireHolder.GetComponentsInChildren<Transform>(listFire);
-        listFire.RemoveAt(0); // Remove parent
+        ////listFire = fireHolder.GetComponentsInChildren<Transform>().ToList();
+        //fireHolder.GetComponentsInChildren<Transform>(listFire);
+        //listFire.RemoveAt(0); // Remove parent
 
         // List of methods to be called by the in-game panels
         List<UnityAction<VRButton>> listActions = new List<UnityAction<VRButton>> {
@@ -97,8 +97,8 @@ public class MethodManager : MonoBehaviour
     }
 
     public void SetFireOff(VRButton button) {
-        listFire.ElementAt(0).gameObject.SetActive(false);
-        listFire.RemoveAt(0);
+        //listFire.ElementAt(0).gameObject.SetActive(false);
+        //listFire.RemoveAt(0);
         Debug.Log("Fire Off");
         button.Interactable = false;
     }

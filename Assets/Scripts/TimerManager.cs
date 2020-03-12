@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TimerManager : MonoBehaviour
 {
-    public int intTimeRemaining;
+    public int intTimer;
     //public int intTimeTotal;
-    public Text txtTimeRemaining;
+    public TextMeshProUGUI tmpTimer;
     public GameObject pnl_GameOver;
 
     //// Start is called before the first frame update
@@ -17,7 +18,7 @@ public class TimerManager : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (intTimeRemaining == 0) {
+        if (intTimer == 0) {
             pnl_GameOver.SetActive(true);
             return;
         }
@@ -26,10 +27,10 @@ public class TimerManager : MonoBehaviour
     }
 
     IEnumerator CountOneSecond() {
+        int minutes = intTimer / 60;
+        int seconds = intTimer % 60;
+        tmpTimer.text = minutes + ":" + seconds;
+        
         yield return new WaitForSeconds(1);
-        int minutes = intTimeRemaining / 60;
-        int seconds = intTimeRemaining % 60;
-
-        txtTimeRemaining.text = minutes + ":" + seconds;
     }
 }
