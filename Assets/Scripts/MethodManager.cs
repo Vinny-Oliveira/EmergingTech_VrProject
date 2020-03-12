@@ -44,6 +44,8 @@ public class MethodManager : MonoBehaviour
             ExplodeObject,
             SetFireOff,
             SetFireOff,
+            PlayDisasterAnimation,
+            PlayButtonSound,
             OpenPanel,
             ReleasePressure,
             OpenDoors
@@ -101,8 +103,9 @@ public class MethodManager : MonoBehaviour
         button.Interactable = false;
     }
 
-    void PlayDisasterAnimation(VRButton button) { 
+    void PlayDisasterAnimation(VRButton button) {
         // TODO: Play disaster animation on the security panels
+        Debug.Log("Disaster played");
     }
 
     #endregion
@@ -111,6 +114,7 @@ public class MethodManager : MonoBehaviour
 
     void PlayButtonSound(VRButton button) {
         // TODO: Add a beep and boop sound
+        Debug.Log("BEEP & BOOP");
     }
 
     #endregion
