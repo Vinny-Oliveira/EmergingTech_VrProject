@@ -6,17 +6,19 @@ using UnityEngine.UI;
 public class TimerManager : MonoBehaviour
 {
     public int intTimeRemaining;
-    public int intTimeTotal;
+    //public int intTimeTotal;
     public Text txtTimeRemaining;
+    public GameObject pnl_GameOver;
 
-    // Start is called before the first frame update
-    void Start() {
-        intTimeRemaining = intTimeTotal;
-    }
+    //// Start is called before the first frame update
+    //void Start() {
+    //    intTimeRemaining = intTimeTotal;
+    //}
 
     // Update is called once per frame
     void Update() {
         if (intTimeRemaining == 0) {
+            pnl_GameOver.SetActive(true);
             return;
         }
 
