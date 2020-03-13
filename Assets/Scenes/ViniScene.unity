@@ -350,10 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonHolder: {fileID: 1880874915}
   sphereHolder: {fileID: 1462165456}
-  fireHolder: {fileID: 0}
-  ExplodingObj: {fileID: 0}
   player: {fileID: 1282524378}
-  listFire: []
 --- !u!4 &165397203
 Transform:
   m_ObjectHideFlags: 0
@@ -864,6 +861,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &601763150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 601763150, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 32987974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &626857702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1290,6 +1293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 743677474}
+  - component: {fileID: 743677475}
   m_Layer: 0
   m_Name: TimerManager
   m_TagString: Untagged
@@ -1311,6 +1315,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &743677475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743677473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f092898868c0d954dbd887a3931e73a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intTimer: 0
+  tmpTimer: {fileID: 0}
+  pnl_GameOver: {fileID: 601763150}
 --- !u!1001 &798686879
 PrefabInstance:
   m_ObjectHideFlags: 0
