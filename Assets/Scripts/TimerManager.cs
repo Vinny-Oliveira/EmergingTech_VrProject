@@ -12,8 +12,7 @@ public class TimerManager : MonoBehaviour
     public GameObject pnl_GameOver;
 
     //// Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         //intTimeRemaining = intTimeTotal;
         StartCoroutine(DisplayTimer());
     }
@@ -31,7 +30,7 @@ public class TimerManager : MonoBehaviour
 
     IEnumerator DisplayTimer() {
 
-        while (intTimer > 0) {
+        while (intTimer > -1) {
 
             int intMinutes = intTimer / 60;
             int intSeconds = intTimer % 60;
