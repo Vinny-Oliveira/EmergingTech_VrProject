@@ -12,32 +12,39 @@ public class TimerManager : MonoBehaviour
     public GameObject pnl_GameOver;
 
     //// Start is called before the first frame update
-    //void Start() {
-    //    intTimeRemaining = intTimeTotal;
-    //}
-
-    // Update is called once per frame
-    void Update() {
-        if (intTimer == 0) {
-            pnl_GameOver.SetActive(true);
-            return;
-        }
-
+    void Start()
+    {
+        //intTimeRemaining = intTimeTotal;
         StartCoroutine(DisplayTimer());
-        //DisplayTimer(ref intTimer);
     }
 
+    //// Update is called once per frame
+    //void Update() {
+    //    if (intTimer == 0) {
+    //        pnl_GameOver.SetActive(true);
+    //        return;
+    //    }
+
+       
+    //    //DisplayTimer(ref intTimer);
+    //}
+
     IEnumerator DisplayTimer() {
-        //intTimer = Mathf.RoundToInt(intTimer - Time.deltaTime);
 
-        int intMinutes = intTimer / 60;
-        int intSeconds = intTimer % 60;
+        while (intTimer > 0) {
 
-        string strMinutes = ((intMinutes < 10) ? ("0" + intMinutes) : (intMinutes.ToString()));
-        string strSeconds = ((intSeconds < 10) ? ("0" + intSeconds) : (intSeconds.ToString()));
-        tmpTimer.text = strMinutes + ":" + strSeconds;
+            int intMinutes = intTimer / 60;
+            int intSeconds = intTimer % 60;
 
-        yield return new WaitForSeconds(1);
-        intTimer--;
+            string strMinutes = ((intMinutes < 10) ? ("0" + intMinutes) : (intMinutes.ToString()));
+            string strSeconds = ((intSeconds < 10) ? ("0" + intSeconds) : (intSeconds.ToString()));
+            tmpTimer.text = strMinutes + ":" + strSeconds;
+
+            yield return new WaitForSeconds(1);
+            intTimer--;
+        }
+
+        pnl_GameOver.SetActive(true);
+
     }
 }
