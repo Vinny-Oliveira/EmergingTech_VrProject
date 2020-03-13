@@ -23,12 +23,12 @@ public class TimerManager : MonoBehaviour
             return;
         }
 
-        //StartCoroutine(CountOneSecond());
-        DisplayTimer(ref intTimer);
+        StartCoroutine(DisplayTimer());
+        //DisplayTimer(ref intTimer);
     }
 
-    void DisplayTimer(ref int intTimer) {
-        intTimer = Mathf.RoundToInt(intTimer - Time.deltaTime);
+    IEnumerator DisplayTimer() {
+        //intTimer = Mathf.RoundToInt(intTimer - Time.deltaTime);
 
         int intMinutes = intTimer / 60;
         int intSeconds = intTimer % 60;
@@ -37,6 +37,7 @@ public class TimerManager : MonoBehaviour
         string strSeconds = ((intSeconds < 10) ? ("0" + intSeconds) : (intSeconds.ToString()));
         tmpTimer.text = strMinutes + ":" + strSeconds;
 
-        //yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
+        intTimer--;
     }
 }
