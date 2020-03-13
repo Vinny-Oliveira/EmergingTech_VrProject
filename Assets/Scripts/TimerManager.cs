@@ -23,14 +23,20 @@ public class TimerManager : MonoBehaviour
             return;
         }
 
-        StartCoroutine(CountOneSecond());
+        //StartCoroutine(CountOneSecond());
+        DisplayTimer(ref intTimer);
     }
 
-    IEnumerator CountOneSecond() {
-        int minutes = intTimer / 60;
-        int seconds = intTimer % 60;
-        tmpTimer.text = minutes + ":" + seconds;
-        
-        yield return new WaitForSeconds(1);
+    void DisplayTimer(ref int intTimer) {
+        intTimer = Mathf.RoundToInt(intTimer - Time.deltaTime);
+
+        int intMinutes = intTimer / 60;
+        int intSeconds = intTimer % 60;
+
+        string strMinutes = ((intMinutes < 10) ? ("0" + intMinutes) : (intMinutes.ToString()));
+        string strSeconds = ((intSeconds < 10) ? ("0" + intSeconds) : (intSeconds.ToString()));
+        tmpTimer.text = strMinutes + ":" + strSeconds;
+
+        //yield return new WaitForSeconds(1);
     }
 }
