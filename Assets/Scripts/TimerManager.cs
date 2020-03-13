@@ -7,26 +7,13 @@ using TMPro;
 public class TimerManager : MonoBehaviour
 {
     public int intTimer;
-    //public int intTimeTotal;
     public TextMeshProUGUI tmpTimer;
     public GameObject pnl_GameOver;
 
-    //// Start is called before the first frame update
+    // Start is called before the first frame update
     void Start() {
-        //intTimeRemaining = intTimeTotal;
         StartCoroutine(DisplayTimer());
     }
-
-    //// Update is called once per frame
-    //void Update() {
-    //    if (intTimer == 0) {
-    //        pnl_GameOver.SetActive(true);
-    //        return;
-    //    }
-
-       
-    //    //DisplayTimer(ref intTimer);
-    //}
 
     IEnumerator DisplayTimer() {
 
@@ -44,6 +31,5 @@ public class TimerManager : MonoBehaviour
         }
 
         pnl_GameOver.SetActive(true);
-
     }
 }
