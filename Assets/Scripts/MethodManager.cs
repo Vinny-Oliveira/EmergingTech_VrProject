@@ -113,7 +113,7 @@ public class MethodManager : MonoBehaviour
     #region BEEPS_AND_BOOPS_FUNCTIONS
 
     void PlayButtonSound(VRButton button) {
-        // TODO: Add a beep and boop sound
+        AudioManager.instance.PlayButtonSound();
         Debug.Log("BEEP & BOOP");
     }
 
