@@ -1677,6 +1677,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioButton: {fileID: 834726057}
+  listAudioClips:
+  - {fileID: 8300000, guid: 9f3c00298a8a6c44481bc5ac73a539d7, type: 3}
+  - {fileID: 8300000, guid: 3a7538d380b46064ca36db8b8ed048a4, type: 3}
+  - {fileID: 8300000, guid: 76a811c4ff297a447b6499ae6ae14d3a, type: 3}
+  - {fileID: 8300000, guid: d20f98e2c3640d4478aca0de657a1edc, type: 3}
+  - {fileID: 8300000, guid: b9874682a5c2c0d4cb5b874b284e8481, type: 3}
 --- !u!82 &834726057
 AudioSource:
   m_ObjectHideFlags: 0
