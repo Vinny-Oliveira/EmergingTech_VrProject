@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class AudioManager : MonoBehaviour {
+public class SfxManager : MonoBehaviour {
 
     public AudioSource audioButton;
     public List<AudioClip> listAudioClips = new List<AudioClip>();
 
-    public static AudioManager instance;
+    public static SfxManager instance;
 
     private void Awake() {
         instance = this;

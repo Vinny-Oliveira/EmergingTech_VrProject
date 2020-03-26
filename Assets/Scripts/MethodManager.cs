@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 
+/// <summary>
+/// Manage how random methids are distributed to the buttons of the game
+/// </summary>
 public class MethodManager : MonoBehaviour
 {
     //public List<VRButton> listButtons = new List<VRButton>();
@@ -82,15 +85,15 @@ public class MethodManager : MonoBehaviour
         Debug.Log("Balls");
     }
 
-    /// <summary>
-    /// Rotate the player away from the panel
-    /// </summary>
-    /// <param name="button"></param>
-    void RotatePlayer(VRButton button) {
-        float randomNum = UnityEngine.Random.Range(160f, 200f);
-        player.localRotation *= Quaternion.Euler(0f, randomNum, 0f);
-        Debug.Log("Rotate");
-    }
+    ///// <summary>
+    ///// Rotate the player away from the panel
+    ///// </summary>
+    ///// <param name="button"></param>
+    //void RotatePlayer(VRButton button) {
+    //    float randomNum = UnityEngine.Random.Range(160f, 200f);
+    //    player.localRotation *= Quaternion.Euler(0f, randomNum, 0f);
+    //    Debug.Log("Rotate");
+    //}
 
     public void ExplodeObject(VRButton button) {
         Debug.Log("Explosion");
@@ -113,7 +116,7 @@ public class MethodManager : MonoBehaviour
     #region BEEPS_AND_BOOPS_FUNCTIONS
 
     void PlayButtonSound(VRButton button) {
-        AudioManager.instance.PlayButtonSound();
+        SfxManager.instance.PlayButtonSound();
         Debug.Log("BEEP & BOOP");
     }
 
