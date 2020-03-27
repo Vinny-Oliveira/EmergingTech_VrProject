@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using Valve.VR.InteractionSystem;
 
 /// <summary>
 /// Manage how random methids are distributed to the buttons of the game
@@ -35,14 +36,14 @@ public class MethodManager : MonoBehaviour
         isDoorOpen = false;
 
         // Reset button list
-        List<VRButton> listButtons = buttonHolder.GetComponentsInChildren<VRButton>().ToList();
+        List<HoverButton> listButtons = buttonHolder.GetComponentsInChildren<HoverButton>().ToList();
 
         ////listFire = fireHolder.GetComponentsInChildren<Transform>().ToList();
         //fireHolder.GetComponentsInChildren<Transform>(listFire);
         //listFire.RemoveAt(0); // Remove parent
 
         // List of methods to be called by the in-game panels
-        List<UnityAction<VRButton>> listActions = new List<UnityAction<VRButton>> {
+        List<UnityAction<Hand>> listActions = new List<UnityAction<Hand>> {
             DropSpheres,
             ExplodeObject,
             SetFireOff,
@@ -66,11 +67,11 @@ public class MethodManager : MonoBehaviour
     /// </summary>
     /// <param name="vrButtons"></param>
     /// <param name="unityActions"></param>
-    void PopulateButtons(ref List<VRButton> vrButtons, ref List<UnityAction<VRButton>> unityActions) { 
+    void PopulateButtons(ref List<HoverButton> vrButtons, ref List<UnityAction<Hand>> unityActions) { 
         for (int i = 0; i < vrButtons.Count; i++) {
-            VRButton button = vrButtons[i];
+            HoverButton button = vrButtons[i];
             int index = i % unityActions.Count;
-            button.ButtonListeners.AddListener(unityActions[index]);
+            button.onButtonIsPressed.AddListener(unityActions[index]);
         }
     }
 
@@ -80,7 +81,7 @@ public class MethodManager : MonoBehaviour
     /// Have spheres drop from the ceiling
     /// </summary>
     /// <param name="button"></param>
-    void DropSpheres(VRButton button) {
+    void DropSpheres(Hand button) {
         sphereHolder.SetActive(true);
         Debug.Log("Balls");
     }
@@ -95,18 +96,17 @@ public class MethodManager : MonoBehaviour
     //    Debug.Log("Rotate");
     //}
 
-    public void ExplodeObject(VRButton button) {
+    public void ExplodeObject(Hand button) {
         Debug.Log("Explosion");
     }
 
-    public void SetFireOff(VRButton button) {
+    public void SetFireOff(Hand button) {
         //listFire.ElementAt(0).gameObject.SetActive(false);
         //listFire.RemoveAt(0);
         Debug.Log("Fire Off");
-        button.Interactable = false;
     }
 
-    void PlayDisasterAnimation(VRButton button) {
+    void PlayDisasterAnimation(Hand button) {
         // TODO: Play disaster animation on the security panels
         Debug.Log("Disaster played");
     }
@@ -115,7 +115,7 @@ public class MethodManager : MonoBehaviour
 
     #region BEEPS_AND_BOOPS_FUNCTIONS
 
-    void PlayButtonSound(VRButton button) {
+    void PlayButtonSound(Hand button) {
         SfxManager.instance.PlayButtonSound();
         Debug.Log("BEEP & BOOP");
     }
@@ -124,13 +124,13 @@ public class MethodManager : MonoBehaviour
 
     #region WINNING_CONDITION_FUNCTIONS
 
-    void OpenPanel(VRButton button) {
+    void OpenPanel(Hand button) {
         // TODO: Open the panel
         isPanel_Open = true;
         Debug.Log("Panel door is open");
     }
 
-    void ReleasePressure(VRButton button) {
+    void ReleasePressure(Hand button) {
         if (!isPanel_Open) {
             PlayButtonSound(button);
             return;
@@ -141,7 +141,7 @@ public class MethodManager : MonoBehaviour
         Debug.Log("Pipe preassure has been released");
     }
 
-    void OpenDoors(VRButton button) { 
+    void OpenDoors(Hand button) { 
         if (!isPanel_Open || !isPressureReleased) {
             PlayButtonSound(button);
             return;
