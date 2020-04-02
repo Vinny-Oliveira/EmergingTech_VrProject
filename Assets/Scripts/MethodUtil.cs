@@ -82,7 +82,7 @@ public class MethodUtil : MonoBehaviour {
         }
 
         // Play the animation of the panel openning
-        animPanelDoor.SetTrigger("Open");
+        animPanelDoor.SetTrigger(animPanelDoor.parameters[0].name);
 
         isPanel_Open = true;
         Debug.Log("Panel door is open");
