@@ -13,7 +13,7 @@ public class MethodUtil : MonoBehaviour {
     public GameObject sphereHolder;
 
     [Header("References for progressions")]
-    public GameObject panel_door_hinges;
+    public Animator animPanelDoor;
     public GameObject brokenPipe;
     public GameObject fixedPipe;
 
@@ -81,8 +81,8 @@ public class MethodUtil : MonoBehaviour {
             return;
         }
 
-        // TODO: Play the animation of the panel openning
-        panel_door_hinges.transform.localRotation = Quaternion.Inverse(Quaternion.Euler(0, 190, 0));
+        // Play the animation of the panel openning
+        animPanelDoor.SetTrigger("Open");
 
         isPanel_Open = true;
         Debug.Log("Panel door is open");
