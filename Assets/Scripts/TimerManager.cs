@@ -19,6 +19,8 @@ public class TimerManager : MonoBehaviour
 
         while (intTimer > -1) {
 
+            yield return new WaitForSeconds(1);
+
             int intMinutes = intTimer / 60;
             int intSeconds = intTimer % 60;
 
@@ -26,7 +28,6 @@ public class TimerManager : MonoBehaviour
             string strSeconds = ((intSeconds < 10) ? ("0" + intSeconds) : (intSeconds.ToString()));
             tmpTimer.text = strMinutes + ":" + strSeconds;
 
-            yield return new WaitForSeconds(1);
             intTimer--;
         }
 
