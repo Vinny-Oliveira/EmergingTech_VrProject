@@ -25,11 +25,6 @@ public class MethodManager : SingletonManager<MethodManager> {
     protected bool isPressureReleased = false;
     protected bool isDoorOpen = false;
 
-    private void Start()
-    {
-        ManageFunctions();
-    }
-
     /// <summary>
     /// Manage how functions are placed in the buttons of the level
     /// </summary>

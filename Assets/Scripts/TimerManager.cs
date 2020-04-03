@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Valve.VR;
 
 public class TimerManager : SingletonManager<TimerManager> {
 
     public int intTimer;
     public TextMeshProUGUI tmpTimer;
-    public GameObject pnl_GameOver;
-
-    // Start is called before the first frame update
-    void Start() {
-        StartCoroutine(RunTimer());
-    }
+    public GameObject pnl_GameOver_VR;
+    public GameObject pnl_GameOver_NO_VR;
 
     /// <summary>
     /// Run the timer
@@ -35,6 +32,10 @@ public class TimerManager : SingletonManager<TimerManager> {
             intTimer--;
         }
 
-        pnl_GameOver.SetActive(true);
+        if (SteamVR.instance != null) {
+            pnl_GameOver_VR.SetActive(true);
+        } else {
+            pnl_GameOver_NO_VR.SetActive(true);
+        }
     }
 }
