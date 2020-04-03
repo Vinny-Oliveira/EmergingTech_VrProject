@@ -946,7 +946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1926599137}
   dialogueInterval: 1
-  waitTimeForAlarm: 5
+  waitTimeForAlarm: 2
   audioDialogue: {fileID: 525889858}
   dialogueStart: {fileID: 8300000, guid: 0b3d3c356baf4ad4d85e654a120b8823, type: 3}
   dialogueTurnAround: {fileID: 8300000, guid: 38d3c023842564f44950320dc0742c68, type: 3}
@@ -1753,7 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f092898868c0d954dbd887a3931e73a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intTimer: 10
+  intTimer: 2
   tmpTimer: {fileID: 709327839}
   pnl_GameOver_VR: {fileID: 601763150}
   pnl_GameOver_NO_VR: {fileID: 351039926}
@@ -2003,6 +2003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VRAsset_HiddenPipe_Broken_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140430179087855656, guid: c73d129b633b83b46b339daa70f9751b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c73d129b633b83b46b339daa70f9751b, type: 3}

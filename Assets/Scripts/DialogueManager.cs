@@ -96,6 +96,7 @@ public class DialogueManager : MonoBehaviour {
             StartCoroutine(PlayEntireDialogue(dialogueSoundAlarm));
             StartCoroutine(TimerManager.instance.RunTimer());
             MethodManager.instance.ManageFunctions();
+            MethodManager.instance.brokenPipe.SetActive(true);
         }
     }
 }
