@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     /// <summary>
-    /// Tell the player to turn around if they have not done so already
+    /// Play the initial dialogue chain
     /// </summary>
     /// <returns></returns>
     IEnumerator PlayDialogueChain() {

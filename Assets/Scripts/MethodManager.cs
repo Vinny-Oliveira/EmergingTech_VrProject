@@ -8,7 +8,7 @@ using Valve.VR.InteractionSystem;
 //using MethodUtil;
 
 /// <summary>
-/// Manage how random methids are distributed to the buttons of the game
+/// Manage how random methods are distributed to the buttons of the game
 /// </summary>
 public class MethodManager : MethodUtil {
 
