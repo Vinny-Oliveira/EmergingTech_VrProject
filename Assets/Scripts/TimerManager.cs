@@ -4,18 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TimerManager : MonoBehaviour
-{
+public class TimerManager : SingletonManager<TimerManager> {
+
     public int intTimer;
     public TextMeshProUGUI tmpTimer;
     public GameObject pnl_GameOver;
 
     // Start is called before the first frame update
     void Start() {
-        StartCoroutine(DisplayTimer());
+        StartCoroutine(RunTimer());
     }
 
-    IEnumerator DisplayTimer() {
+    /// <summary>
+    /// Run the timer
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator RunTimer() {
 
         while (intTimer > -1) {
 

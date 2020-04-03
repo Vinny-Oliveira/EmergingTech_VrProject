@@ -23,7 +23,7 @@ public class PauseManager : MonoBehaviour {
     /// </summary>
     public void PauseGame() {
         Time.timeScale = 0;
-        dialogueManager.audioSource.Pause();
+        dialogueManager.audioDialogue.Pause();
     }
 
     /// <summary>
@@ -31,7 +31,7 @@ public class PauseManager : MonoBehaviour {
     /// </summary>
     public void ResumeGame() {
         Time.timeScale = 1;
-        dialogueManager.audioSource.UnPause();
+        dialogueManager.audioDialogue.UnPause();
     }
 
 }

@@ -909,18 +909,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1926599137}
-  intWaitTime: 3
-  audioSource: {fileID: 525889858}
+  dialogueInterval: 3
+  waitTimeForAlarm: 0
+  audioDialogue: {fileID: 525889858}
   dialogueStart: {fileID: 8300000, guid: 0b3d3c356baf4ad4d85e654a120b8823, type: 3}
   dialogueTurnAround: {fileID: 8300000, guid: 38d3c023842564f44950320dc0742c68, type: 3}
   dialogueFacePanel: {fileID: 8300000, guid: 728ebec7094a5bb4c9b31db8fe1c4759, type: 3}
   dialogueBackToWork: {fileID: 8300000, guid: 6296141886421b7439708abbbbfd2cb1, type: 3}
   dialogueSayHoldOn: {fileID: 8300000, guid: c2f960e44df633a4dabddc4ac429aa35, type: 3}
-  dialogueCantSpeak: {fileID: 0}
-  dialogueSoundAlarm: {fileID: 0}
-  dialogueDoorKnock1: {fileID: 0}
-  dialogueDoorKnock2: {fileID: 0}
-  dialoguePressDoorButton: {fileID: 0}
+  dialogueCantSpeak: {fileID: 8300000, guid: 7461b3410b2692549bddf8f487dcb4a7, type: 3}
+  dialogueSoundAlarm: {fileID: 8300000, guid: 428eda6a641801240863819c10f50937, type: 3}
+  dialogueDoorKnock1: {fileID: 8300000, guid: 7461b3410b2692549bddf8f487dcb4a7, type: 3}
+  dialogueDoorKnock2: {fileID: 8300000, guid: 428eda6a641801240863819c10f50937, type: 3}
+  dialoguePressDoorButton: {fileID: 8300000, guid: 7461b3410b2692549bddf8f487dcb4a7,
+    type: 3}
 --- !u!82 &525889858
 AudioSource:
   m_ObjectHideFlags: 0

@@ -7,11 +7,12 @@ public class DialogueManager : MonoBehaviour {
 
     [Header("Control Variables")]
     public Transform playerCamera;
-    public int intWaitTime;
+    public int dialogueInterval;
+    public int waitTimeForAlarm;
     public const float TURN_AROUND_ANGLE = 120f;
 
     [Header("Audio Source and Clips")]
-    public AudioSource audioSource;
+    public AudioSource audioDialogue;
     public AudioClip dialogueStart;
     public AudioClip dialogueTurnAround;
     public AudioClip dialogueFacePanel;
@@ -22,6 +23,10 @@ public class DialogueManager : MonoBehaviour {
     public AudioClip dialogueDoorKnock1;
     public AudioClip dialogueDoorKnock2;
     public AudioClip dialoguePressDoorButton;
+
+    // Dialogue control
+    bool isFirstChainFinished = false;
+    bool isWaitingForAlarm = false;
 
     private void Start() {
         // Play the initial dialogue chain
@@ -50,6 +55,8 @@ public class DialogueManager : MonoBehaviour {
         yield return StartCoroutine(PlayEntireDialogue(dialogueBackToWork));
         yield return StartCoroutine(PlayEntireDialogue(dialogueSayHoldOn));
         yield return StartCoroutine(PlayEntireDialogue(dialogueCantSpeak));
+
+        isWaitingForAlarm = true;
     }
 
     /// <summary>
@@ -57,8 +64,8 @@ public class DialogueManager : MonoBehaviour {
     /// </summary>
     /// <param name="audioClip"></param>
     void PlayDialogue(AudioClip audioClip) {
-        audioSource.clip = audioClip;
-        audioSource.Play();
+        audioDialogue.clip = audioClip;
+        audioDialogue.Play();
     }
 
     /// <summary>
@@ -68,6 +75,16 @@ public class DialogueManager : MonoBehaviour {
     /// <returns></returns>
     IEnumerator PlayEntireDialogue(AudioClip audioClip) {
         PlayDialogue(audioClip);
-        yield return new WaitForSeconds(audioClip.length + intWaitTime);
+        yield return new WaitForSeconds(audioClip.length + dialogueInterval);
+    }
+
+
+    public void SoundTheAlarm() { 
+        if (isWaitingForAlarm) {
+            isWaitingForAlarm = false;
+            StartCoroutine(PlayEntireDialogue(dialogueSoundAlarm));
+            StartCoroutine(TimerManager.instance.RunTimer());
+            MethodManager.instance.ManageFunctions();
+        }
     }
 }
