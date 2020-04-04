@@ -177,7 +177,6 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         EngineerKnocksOnDoor_1(dialogueDoorKnock1);
     }
     
-
     /// <summary>
     /// Play the first dialogue of the engineer knocking on the door
     /// </summary>
@@ -185,7 +184,10 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         PlayDialogueOnConditions(audioClip, ref isWaitingForDoor);
     }
 
-
+    /// <summary>
+    /// Set the pause state of the game to work with dialogues
+    /// </summary>
+    /// <param name="pauseState"></param>
     public void SetGamePaused(bool pauseState) {
         isGamePaused = pauseState;
     }
