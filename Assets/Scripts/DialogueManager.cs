@@ -29,7 +29,6 @@ public class DialogueManager : SingletonManager<DialogueManager> {
 
     // Dialogue control
     bool isGamePaused = false;
-    [SerializeField]
     bool isWaitingForAlarm = false;
     bool isWaitingForDoor = false;
     bool isSkipped = false;
@@ -42,6 +41,9 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         }
     }
 
+    /// <summary>
+    /// Start the dialogue chain of the beginning of the game
+    /// </summary>
     public void StartDialogueChain() {
         isGamePaused = false;
         isSkipped = false;
@@ -79,7 +81,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueCantSpeak));
 
         // Sound the alarm if the player presses a button or if nothing is pressed for a while
-        StartCoroutine(PlayDialogueAfterWaiting(dialogueSoundAlarmByIdle, waitTimeForAlarm, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
+        yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForAlarm, SoundTheAlarm, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
 
         //isWaitingForAlarm = true;
         //yield return new WaitForSeconds(waitTimeForAlarm);
@@ -89,7 +91,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
 
         // Have engineers come to the door
-        StartCoroutine(PlayDialogueAfterWaiting(dialogueDoorKnock1, waitTimeForDoor, (myBool) => { isWaitingForDoor = myBool; }, () => isWaitingForDoor));
+        yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForDoor, EngineerKnocksOnDoor_1, (myBool) => { isWaitingForDoor = myBool; }, () => isWaitingForDoor));
 
         //isWaitingForDoor = true;
         //Debug.Log("Waiting for door");
@@ -137,16 +139,16 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         return false;
     }
 
-    [ContextMenu("TEST LAMBDA")]
-    public void TestLambda() {
-        StartCoroutine(PlayDialogueAfterWaiting(dialogueStart, 1, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
-    }
+    //[ContextMenu("TEST LAMBDA")]
+    //public void TestLambda() {
+    //    StartCoroutine(PlayDialogueAfterWaiting(dialogueStart, 1, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
+    //}
 
-    IEnumerator PlayDialogueAfterWaiting(AudioClip audioToPlay, int waitTime, System.Action<bool> waitCondition, System.Func<bool> ConditionChecker) { 
-        waitCondition(true);
+    IEnumerator PlayDialogueAfterWaiting(int waitTime, System.Action SoundAction, System.Action<bool> WaitCondition, System.Func<bool> ConditionChecker) { 
+        WaitCondition(true);
         yield return new WaitForSeconds(waitTime);
         if (ConditionChecker()) {
-            SoundTheAlarm(audioToPlay);
+            SoundAction();
         }
     }
 
