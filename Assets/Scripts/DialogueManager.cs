@@ -79,20 +79,24 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueCantSpeak));
 
         // Sound the alarm if the player presses a button or if nothing is pressed for a while
-        isWaitingForAlarm = true;
-        yield return new WaitForSeconds(waitTimeForAlarm);
-        if (isWaitingForAlarm) {
-            SoundTheAlarm(dialogueSoundAlarmByIdle);
-        }
+        StartCoroutine(PlayDialogueAfterWaiting(dialogueSoundAlarmByIdle, waitTimeForAlarm, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
+
+        //isWaitingForAlarm = true;
+        //yield return new WaitForSeconds(waitTimeForAlarm);
+        //if (isWaitingForAlarm) {
+        //    SoundTheAlarm(dialogueSoundAlarmByIdle);
+        //}
         yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
 
         // Have engineers come to the door
-        isWaitingForDoor = true;
-        Debug.Log("Waiting for door");
-        yield return new WaitForSeconds(waitTimeForDoor);
-        if (isWaitingForDoor) {
-            EngineerKnocksOnDoor_1();
-        }
+        StartCoroutine(PlayDialogueAfterWaiting(dialogueDoorKnock1, waitTimeForDoor, (myBool) => { isWaitingForDoor = myBool; }, () => isWaitingForDoor));
+
+        //isWaitingForDoor = true;
+        //Debug.Log("Waiting for door");
+        //yield return new WaitForSeconds(waitTimeForDoor);
+        //if (isWaitingForDoor) {
+        //    EngineerKnocksOnDoor_1(dialogueDoorKnock1);
+        //}
 
     }
 
@@ -168,7 +172,15 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// Play the first dialogue of the engineer knocking on the door
     /// </summary>
     public void EngineerKnocksOnDoor_1() {
-        PlayDialogueOnConditions(dialogueDoorKnock1, ref isWaitingForDoor);
+        EngineerKnocksOnDoor_1(dialogueDoorKnock1);
+    }
+    
+
+    /// <summary>
+    /// Play the first dialogue of the engineer knocking on the door
+    /// </summary>
+    public void EngineerKnocksOnDoor_1(AudioClip audioClip) {
+        PlayDialogueOnConditions(audioClip, ref isWaitingForDoor);
     }
 
 
