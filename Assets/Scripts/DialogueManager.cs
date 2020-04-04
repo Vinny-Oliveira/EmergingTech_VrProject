@@ -29,6 +29,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
 
     // Dialogue control
     bool isGamePaused = false;
+    [SerializeField]
     bool isWaitingForAlarm = false;
     bool isWaitingForDoor = false;
     bool isSkipped = false;
@@ -132,13 +133,17 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         return false;
     }
 
-    IEnumerator PlayDialogueAfterWaiting(AudioClip audioToPlay, int waitTime, System.Action<bool> waitCondition) { 
+    [ContextMenu("TEST LAMBDA")]
+    public void TestLambda() {
+        StartCoroutine(PlayDialogueAfterWaiting(dialogueStart, 1, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
+    }
+
+    IEnumerator PlayDialogueAfterWaiting(AudioClip audioToPlay, int waitTime, System.Action<bool> waitCondition, System.Func<bool> ConditionChecker) { 
         waitCondition(true);
         yield return new WaitForSeconds(waitTime);
-        System.Func <bool> myFunc;
-        //if (System.Func<bool>()) {
-        //    SoundTheAlarm(audioToPlay);
-        //}
+        if (ConditionChecker()) {
+            SoundTheAlarm(audioToPlay);
+        }
     }
 
     /// <summary>
@@ -166,11 +171,6 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         PlayDialogueOnConditions(dialogueDoorKnock1, ref isWaitingForDoor);
     }
 
-    [ContextMenu("Check if it is playing")]
-    void IsDialoguePlaying()
-    {
-        Debug.Log(audioDialogue.isPlaying);
-    }
 
     public void SetGamePaused(bool pauseState) {
         isGamePaused = pauseState;
