@@ -19,7 +19,8 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     public AudioClip dialogueBackToWork;
     public AudioClip dialogueSayHoldOn;
     public AudioClip dialogueCantSpeak;
-    public AudioClip dialogueSoundAlarm;
+    public AudioClip dialogueSoundAlarmByButton;
+    public AudioClip dialogueSoundAlarmByIdle;
     public AudioClip dialogueDoorKnock1;
     public AudioClip dialogueDoorKnock2;
     public AudioClip dialoguePressDoorButton;
@@ -63,7 +64,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         isWaitingForAlarm = true;
         yield return new WaitForSeconds(waitTimeForAlarm);
         if (!isTimerRunning) {
-            SoundTheAlarm();
+            SoundTheAlarm(dialogueSoundAlarmByIdle);
         }
     }
 
@@ -89,11 +90,18 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// <summary>
     /// Sound the alarm, start the timer, and enable the buttons
     /// </summary>
-    public void SoundTheAlarm() { 
+    public void SoundTheAlarm() {
+        SoundTheAlarm(dialogueSoundAlarmByButton);
+    }
+
+    /// <summary>
+    /// Sound the alarm, start the timer, and enable the buttons
+    /// </summary>
+    public void SoundTheAlarm(AudioClip audioClip) { 
         if (isWaitingForAlarm) {
             isWaitingForAlarm = false;
             isTimerRunning = true;
-            StartCoroutine(PlayEntireDialogue(dialogueSoundAlarm));
+            StartCoroutine(PlayEntireDialogue(audioClip));
             StartCoroutine(TimerManager.instance.RunTimer());
             MethodManager.instance.ManageFunctions();
             MethodManager.instance.brokenPipe.SetActive(true);

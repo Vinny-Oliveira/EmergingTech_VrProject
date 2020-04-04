@@ -1179,7 +1179,10 @@ MonoBehaviour:
   dialogueBackToWork: {fileID: 8300000, guid: 6296141886421b7439708abbbbfd2cb1, type: 3}
   dialogueSayHoldOn: {fileID: 8300000, guid: c2f960e44df633a4dabddc4ac429aa35, type: 3}
   dialogueCantSpeak: {fileID: 8300000, guid: 7461b3410b2692549bddf8f487dcb4a7, type: 3}
-  dialogueSoundAlarm: {fileID: 8300000, guid: f4380321f8d0f1f4ba04fc2cc54f0baf, type: 3}
+  dialogueSoundAlarmByButton: {fileID: 8300000, guid: f4380321f8d0f1f4ba04fc2cc54f0baf,
+    type: 3}
+  dialogueSoundAlarmByIdle: {fileID: 8300000, guid: f4380321f8d0f1f4ba04fc2cc54f0baf,
+    type: 3}
   dialogueDoorKnock1: {fileID: 8300000, guid: 7461b3410b2692549bddf8f487dcb4a7, type: 3}
   dialogueDoorKnock2: {fileID: 8300000, guid: 428eda6a641801240863819c10f50937, type: 3}
   dialoguePressDoorButton: {fileID: 8300000, guid: 7461b3410b2692549bddf8f487dcb4a7,
