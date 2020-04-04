@@ -24,6 +24,7 @@ public class PauseManager : MonoBehaviour {
     public void PauseGame() {
         Time.timeScale = 0;
         dialogueManager.audioDialogue.Pause();
+        dialogueManager.SetGamePaused(true);
     }
 
     /// <summary>
@@ -32,6 +33,7 @@ public class PauseManager : MonoBehaviour {
     public void ResumeGame() {
         Time.timeScale = 1;
         dialogueManager.audioDialogue.UnPause();
+        dialogueManager.SetGamePaused(false);
     }
 
 }

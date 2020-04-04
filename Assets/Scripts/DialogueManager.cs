@@ -28,6 +28,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     public AudioClip dialoguePressDoorButton;
 
     // Dialogue control
+    bool isGamePaused = false;
     bool isWaitingForAlarm = false;
     bool isWaitingForDoor = false;
     bool isSkipped = false;
@@ -41,6 +42,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     }
 
     public void StartDialogueChain() {
+        isGamePaused = false;
         isSkipped = false;
         isWaitingForAlarm = false;
         isWaitingForDoor = false;
@@ -81,7 +83,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         if (isWaitingForAlarm) {
             SoundTheAlarm(dialogueSoundAlarmByIdle);
         }
-        yield return new WaitWhile(() => audioDialogue.isPlaying);
+        yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
 
         // Have engineers come to the door
         isWaitingForDoor = true;
@@ -109,7 +111,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// <returns></returns>
     IEnumerator PlayEntireDialogue(AudioClip audioClip) {
         PlayDialogue(audioClip);
-        yield return new WaitWhile(() => audioDialogue.isPlaying);
+        yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
         if (!isSkipped) { 
             yield return new WaitForSeconds(dialogueInterval);
         } 
@@ -130,13 +132,14 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         return false;
     }
 
-    //IEnumerator PlayDialogueAfterWaiting(AudioClip audioToPlay, int waitTime, System.Action<bool> waitCondition) { 
-    //    waitCondition(true);
-    //    yield return new WaitForSeconds(waitTime);
-    //    if (waitCondition) {
-    //        SoundTheAlarm(audioToPlay);
-    //    }
-    //}
+    IEnumerator PlayDialogueAfterWaiting(AudioClip audioToPlay, int waitTime, System.Action<bool> waitCondition) { 
+        waitCondition(true);
+        yield return new WaitForSeconds(waitTime);
+        System.Func <bool> myFunc;
+        //if (System.Func<bool>()) {
+        //    SoundTheAlarm(audioToPlay);
+        //}
+    }
 
     /// <summary>
     /// Sound the alarm, start the timer, and enable the buttons
@@ -161,5 +164,15 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// </summary>
     public void EngineerKnocksOnDoor_1() {
         PlayDialogueOnConditions(dialogueDoorKnock1, ref isWaitingForDoor);
+    }
+
+    [ContextMenu("Check if it is playing")]
+    void IsDialoguePlaying()
+    {
+        Debug.Log(audioDialogue.isPlaying);
+    }
+
+    public void SetGamePaused(bool pauseState) {
+        isGamePaused = pauseState;
     }
 }
