@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestScene2.unity
+    path: Assets/Scenes/ViniScene.unity
     guid: cb624d53b4133c34dbe35b700065d017
   m_configObjects: {}
