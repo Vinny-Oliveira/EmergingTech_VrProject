@@ -29,27 +29,25 @@ public class DialogueManager : SingletonManager<DialogueManager> {
 
     // Dialogue control
     bool isWaitingForAlarm = false;
-    //bool isTimerRunning = false;
     bool isWaitingForDoor = false;
     bool isSkipped = false;
 
     private void Update() {
+        // Press escape to skip dialogue
         if (Input.GetKeyDown(KeyCode.Escape)) {
             audioDialogue.Stop();
             isSkipped = true;
-            Debug.Log(isSkipped);
         }
     }
 
     public void StartDialogueChain() {
         isSkipped = false;
         isWaitingForAlarm = false;
-        //isTimerRunning = false;
         isWaitingForDoor = false;
 
         // Play the initial dialogue chain
         StartCoroutine(PlayDialogueChain());
-        Debug.Log("Press Esc");
+        Debug.Log("Press Esc to skip dialogue");
     }
 
     /// <summary>
@@ -59,14 +57,15 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     IEnumerator PlayDialogueChain() {
         // Set initial rotation
         float initialRotation = playerCamera.localRotation.eulerAngles.y;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(dialogueInterval);
 
         // Play the dialoque that starts the game
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueStart));
 
         // Check if player has turned around to face the button panel
         while (!(playerCamera.localRotation.eulerAngles.y > initialRotation + TURN_AROUND_ANGLE && 
-                 playerCamera.localRotation.eulerAngles.y < initialRotation + 360f - TURN_AROUND_ANGLE) && !isSkipped) {
+                 playerCamera.localRotation.eulerAngles.y < initialRotation + 360f - TURN_AROUND_ANGLE) && 
+               !isSkipped) {
             yield return StartCoroutine(PlayEntireDialogue(dialogueTurnAround));
         }
 
@@ -76,19 +75,17 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueSayHoldOn));
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueCantSpeak));
 
-        Debug.Log("YOU CAN PRESS BUTTONS");
-
         // Sound the alarm if the player presses a button or if nothing is pressed for a while
         isWaitingForAlarm = true;
         yield return new WaitForSeconds(waitTimeForAlarm);
         if (isWaitingForAlarm) {
             SoundTheAlarm(dialogueSoundAlarmByIdle);
         }
-
-        while (audioDialogue.isPlaying) { /* Do nothing */ }
+        yield return new WaitWhile(() => audioDialogue.isPlaying);
 
         // Have engineers come to the door
         isWaitingForDoor = true;
+        Debug.Log("Waiting for door");
         yield return new WaitForSeconds(waitTimeForDoor);
         if (isWaitingForDoor) {
             EngineerKnocksOnDoor_1();
@@ -106,13 +103,16 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     }
 
     /// <summary>
-    /// Play a dialogue until it finishes
+    /// Play a dialogue until it finishes or is skipped
     /// </summary>
     /// <param name="audioClip"></param>
     /// <returns></returns>
     IEnumerator PlayEntireDialogue(AudioClip audioClip) {
         PlayDialogue(audioClip);
-        yield return new WaitForSeconds(audioClip.length + dialogueInterval);
+        yield return new WaitWhile(() => audioDialogue.isPlaying);
+        if (!isSkipped) { 
+            yield return new WaitForSeconds(dialogueInterval);
+        } 
     }
 
     /// <summary>

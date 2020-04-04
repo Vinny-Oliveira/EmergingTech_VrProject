@@ -1196,8 +1196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1926599137}
   dialogueInterval: 1
-  waitTimeForAlarm: 2
-  waitTimeForDoor: 5
+  waitTimeForAlarm: 20
+  waitTimeForDoor: 20
   audioDialogue: {fileID: 525889858}
   dialogueStart: {fileID: 8300000, guid: 0b3d3c356baf4ad4d85e654a120b8823, type: 3}
   dialogueTurnAround: {fileID: 8300000, guid: 38d3c023842564f44950320dc0742c68, type: 3}
