@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class DialogueManager : MonoBehaviour {
+public class DialogueManager : SingletonManager<DialogueManager> {
 
     [Header("Control Variables")]
     public Transform playerCamera;
@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour {
     bool isWaitingForAlarm = false;
     bool isTimerRunning = false;
 
-    private void Start() {
+    public void StartDialogueChain() {
         isWaitingForAlarm = false;
         isTimerRunning = false;
 
@@ -44,20 +44,20 @@ public class DialogueManager : MonoBehaviour {
         // Set initial rotation
         float initialRotation = playerCamera.localRotation.eulerAngles.y;
 
-        //// Play the dialoque that starts the game
-        //yield return StartCoroutine(PlayEntireDialogue(dialogueStart));
+        // Play the dialoque that starts the game
+        yield return StartCoroutine(PlayEntireDialogue(dialogueStart));
 
-        //// Check if player has turned around to face the button panel
-        //while (!(playerCamera.localRotation.eulerAngles.y > initialRotation + TURN_AROUND_ANGLE && 
-        //         playerCamera.localRotation.eulerAngles.y < initialRotation + 360f - TURN_AROUND_ANGLE)) {
-        //    yield return StartCoroutine(PlayEntireDialogue(dialogueTurnAround));
-        //}
+        // Check if player has turned around to face the button panel
+        while (!(playerCamera.localRotation.eulerAngles.y > initialRotation + TURN_AROUND_ANGLE && 
+                 playerCamera.localRotation.eulerAngles.y < initialRotation + 360f - TURN_AROUND_ANGLE)) {
+            yield return StartCoroutine(PlayEntireDialogue(dialogueTurnAround));
+        }
 
-        //// Play the following dialogue chain after the player has turned around
-        //yield return StartCoroutine(PlayEntireDialogue(dialogueFacePanel));
-        //yield return StartCoroutine(PlayEntireDialogue(dialogueBackToWork));
-        //yield return StartCoroutine(PlayEntireDialogue(dialogueSayHoldOn));
-        //yield return StartCoroutine(PlayEntireDialogue(dialogueCantSpeak));
+        // Play the following dialogue chain after the player has turned around
+        yield return StartCoroutine(PlayEntireDialogue(dialogueFacePanel));
+        yield return StartCoroutine(PlayEntireDialogue(dialogueBackToWork));
+        yield return StartCoroutine(PlayEntireDialogue(dialogueSayHoldOn));
+        yield return StartCoroutine(PlayEntireDialogue(dialogueCantSpeak));
 
         // Sound the alarm if the player presses a button or if nothing is pressed for a while
         isWaitingForAlarm = true;
