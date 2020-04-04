@@ -1311,7 +1311,7 @@ GameObject:
   - component: {fileID: 460047889}
   - component: {fileID: 460047888}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1384,12 +1384,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460047887}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.76, y: 2.86, z: -2.276}
   m_LocalScale: {x: 8.486301, y: 6.2778535, z: 0.44364}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 2032548196}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &525889856
 GameObject:
@@ -1425,6 +1425,7 @@ MonoBehaviour:
   dialogueInterval: 1
   waitTimeForAlarm: 20
   waitTimeForDoor: 20
+  waitTimeForButton: 5
   audioDialogue: {fileID: 525889858}
   dialogueStart: {fileID: 8300000, guid: 0b3d3c356baf4ad4d85e654a120b8823, type: 3}
   dialogueTurnAround: {fileID: 8300000, guid: 38d3c023842564f44950320dc0742c68, type: 3}
@@ -1437,8 +1438,8 @@ MonoBehaviour:
   dialogueSoundAlarmByIdle: {fileID: 8300000, guid: ffa34323668f12242ab8e3b23cac923f,
     type: 3}
   dialogueDoorKnock1: {fileID: 8300000, guid: 63c374c19fe4f5d4c9ea6c0bc02c9890, type: 3}
-  dialogueDoorKnock2: {fileID: 8300000, guid: 428eda6a641801240863819c10f50937, type: 3}
-  dialoguePressDoorButton: {fileID: 8300000, guid: 7461b3410b2692549bddf8f487dcb4a7,
+  dialogueDoorKnock2: {fileID: 8300000, guid: d4c32a709dda77b4981866e50b78cc4b, type: 3}
+  dialoguePressDoorButton: {fileID: 8300000, guid: 03a1e4af1dc6d64499454186953523d6,
     type: 3}
 --- !u!82 &525889858
 AudioSource:
@@ -3932,6 +3933,7 @@ Transform:
   - {fileID: 664121937}
   - {fileID: 1891419503}
   - {fileID: 969112146}
+  - {fileID: 460047891}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

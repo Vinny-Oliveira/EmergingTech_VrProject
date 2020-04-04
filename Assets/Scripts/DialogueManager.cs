@@ -11,6 +11,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     public int dialogueInterval;
     public int waitTimeForAlarm;
     public int waitTimeForDoor;
+    public int waitTimeForButton;
     public const float TURN_AROUND_ANGLE = 120f;
 
     [Header("Audio Source and Clips")]
@@ -29,9 +30,10 @@ public class DialogueManager : SingletonManager<DialogueManager> {
 
     // Dialogue control
     bool isGamePaused = false;
+    bool isSkipped = false;
     bool isWaitingForAlarm = false;
     bool isWaitingForDoor = false;
-    bool isSkipped = false;
+    bool isWaitingForBtnPress = false;
 
     private void Update() {
         // Press escape to skip dialogue
@@ -45,10 +47,12 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// Start the dialogue chain of the beginning of the game
     /// </summary>
     public void StartDialogueChain() {
+        // Initialize control variables
         isGamePaused = false;
         isSkipped = false;
         isWaitingForAlarm = false;
         isWaitingForDoor = false;
+        isWaitingForBtnPress = false;
 
         // Play the initial dialogue chain
         StartCoroutine(PlayDialogueChain());
@@ -82,16 +86,17 @@ public class DialogueManager : SingletonManager<DialogueManager> {
 
         // Sound the alarm if the player presses a button or if nothing is pressed for a while
         yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForAlarm, SoundTheAlarm, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
+        yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
 
         //isWaitingForAlarm = true;
         //yield return new WaitForSeconds(waitTimeForAlarm);
         //if (isWaitingForAlarm) {
         //    SoundTheAlarm(dialogueSoundAlarmByIdle);
         //}
-        yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
 
         // Have engineers come to the door
         yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForDoor, EngineerKnocksOnDoor_1, (myBool) => { isWaitingForDoor = myBool; }, () => isWaitingForDoor));
+        yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
 
         //isWaitingForDoor = true;
         //Debug.Log("Waiting for door");
@@ -100,6 +105,9 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         //    EngineerKnocksOnDoor_1(dialogueDoorKnock1);
         //}
 
+        // Engineers cannot open the door
+        yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForButton, EngineerKnocksOnDoor_2, (myBool) => { isWaitingForBtnPress = myBool; }, () => isWaitingForBtnPress));
+        yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
     }
 
     /// <summary>
@@ -144,6 +152,14 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     //    StartCoroutine(PlayDialogueAfterWaiting(dialogueStart, 1, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
     //}
 
+    /// <summary>
+    /// Play a dialogue after waiting for some time if a caondition is satisfied
+    /// </summary>
+    /// <param name="waitTime"></param>
+    /// <param name="SoundAction"></param>
+    /// <param name="WaitCondition"></param>
+    /// <param name="ConditionChecker"></param>
+    /// <returns></returns>
     IEnumerator PlayDialogueAfterWaiting(int waitTime, System.Action SoundAction, System.Action<bool> WaitCondition, System.Func<bool> ConditionChecker) { 
         WaitCondition(true);
         yield return new WaitForSeconds(waitTime);
@@ -182,6 +198,13 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// </summary>
     public void EngineerKnocksOnDoor_1(AudioClip audioClip) {
         PlayDialogueOnConditions(audioClip, ref isWaitingForDoor);
+    }
+        
+    /// <summary>
+    /// Play the first dialogue of the engineer knocking on the door
+    /// </summary>
+    public void EngineerKnocksOnDoor_2() {
+        PlayDialogueOnConditions(dialogueDoorKnock2, ref isWaitingForBtnPress);
     }
 
     /// <summary>
