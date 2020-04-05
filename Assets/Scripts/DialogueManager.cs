@@ -88,24 +88,11 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForAlarm, SoundTheAlarm, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
         yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
 
-        //isWaitingForAlarm = true;
-        //yield return new WaitForSeconds(waitTimeForAlarm);
-        //if (isWaitingForAlarm) {
-        //    SoundTheAlarm(dialogueSoundAlarmByIdle);
-        //}
-
-        // Have engineers come to the door
+        // Have engineers come to the door if a button is pushed or if nothing is done for a while
         yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForDoor, EngineerKnocksOnDoor_1, (myBool) => { isWaitingForDoor = myBool; }, () => isWaitingForDoor));
         yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
 
-        //isWaitingForDoor = true;
-        //Debug.Log("Waiting for door");
-        //yield return new WaitForSeconds(waitTimeForDoor);
-        //if (isWaitingForDoor) {
-        //    EngineerKnocksOnDoor_1(dialogueDoorKnock1);
-        //}
-
-        // Engineers cannot open the door
+        // Engineers cannot open the door - this dialogue is skipped if the door button is pushed
         yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForButton, EngineerKnocksOnDoor_2, (myBool) => { isWaitingForBtnPress = myBool; }, () => isWaitingForBtnPress));
         yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
     }
@@ -146,11 +133,6 @@ public class DialogueManager : SingletonManager<DialogueManager> {
 
         return false;
     }
-
-    //[ContextMenu("TEST LAMBDA")]
-    //public void TestLambda() {
-    //    StartCoroutine(PlayDialogueAfterWaiting(dialogueStart, 1, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
-    //}
 
     /// <summary>
     /// Play a dialogue after waiting for some time if a caondition is satisfied
