@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 /// <summary>
@@ -15,15 +16,19 @@ public class MethodManager : SingletonManager<MethodManager> {
     public GameObject buttonHolder;
     public GameObject sphereHolder;
 
-    [Header("References for progressions")]
+    [Header("References for progression")]
     public Animator animPanelDoor;
     public GameObject brokenPipe;
     public GameObject fixedPipe;
+    public GameObject pauseBtn_VR;
+    public GameObject pauseBtn_NO_VR;
+    public GameObject pnl_Win_VR;
+    public GameObject pnl_Win_NO_VR;
 
     // Winning condition sequence
-    protected bool isPanel_Open = false;
-    protected bool isPressureReleased = false;
-    protected bool isDoorOpen = false;
+    bool isPanel_Open = false;
+    bool isPressureReleased = false;
+    bool isDoorOpen = false;
 
     /// <summary>
     /// Manage how functions are placed in the buttons of the level
@@ -69,6 +74,14 @@ public class MethodManager : SingletonManager<MethodManager> {
             int index = i % unityActions.Count;
             button.onButtonIsPressed.AddListener(unityActions[index]);
         }
+    }
+
+    /// <summary>
+    /// Getter for isDoorOpen
+    /// </summary>
+    /// <returns></returns>
+    public bool IsDoorOpen() {
+        return isDoorOpen;
     }
 
     #region EVENT_FUNCTIONS
@@ -121,7 +134,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     /// Open the door of the panel that has a broken pipe
     /// </summary>
     /// <param name="button"></param>
-    protected void OpenPanel(Hand button) {
+    void OpenPanel(Hand button) {
         PlayButtonSound(button);
 
         // Do nothing if the panel is already open
@@ -141,7 +154,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     /// Fix the broken pipe inside the panel
     /// </summary>
     /// <param name="button"></param>
-    protected void ReleasePressure(Hand button) {
+    void ReleasePressure(Hand button) {
         PlayButtonSound(button);
 
         // Do nothing if the panel is closed or if the preassure has already been released
@@ -158,16 +171,27 @@ public class MethodManager : SingletonManager<MethodManager> {
         Debug.Log("Pipe preassure has been released");
     }
 
-    protected void OpenDoors(Hand button) {
+    /// <summary>
+    /// Open the door in the back of the room and win the level
+    /// </summary>
+    /// <param name="button"></param>
+    void OpenDoors(Hand button) {
         PlayButtonSound(button);
 
-        if (!isPanel_Open || !isPressureReleased) {
+        if (!isPanel_Open || !isPressureReleased || isDoorOpen) {
             PlayButtonSound(button);
             return;
         }
 
-        // TODO: Open the doors and win the game
         isDoorOpen = true;
+        if (SteamVR.instance != null) {
+            pauseBtn_VR.SetActive(false);
+            pnl_Win_VR.SetActive(true);
+        } else {
+            pauseBtn_NO_VR.SetActive(false);
+            pnl_Win_NO_VR.SetActive(true);
+        }
+
         Debug.Log("Exit doors are open");
     }
 

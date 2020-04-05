@@ -18,7 +18,8 @@ public class TimerManager : SingletonManager<TimerManager> {
     /// <returns></returns>
     public IEnumerator RunTimer() {
 
-        while (intTimer > -1) {
+        // Countdown
+        while (intTimer > -1 && !MethodManager.instance.IsDoorOpen()) {
 
             yield return new WaitForSeconds(1);
 
@@ -32,10 +33,13 @@ public class TimerManager : SingletonManager<TimerManager> {
             intTimer--;
         }
 
-        if (SteamVR.instance != null) {
-            pnl_GameOver_VR.SetActive(true);
-        } else {
-            pnl_GameOver_NO_VR.SetActive(true);
+        // Activate the game over panel
+        if (!MethodManager.instance.IsDoorOpen()) { 
+            if (SteamVR.instance != null) {
+                pnl_GameOver_VR.SetActive(true);
+            } else {
+                pnl_GameOver_NO_VR.SetActive(true);
+            }
         }
     }
 }
