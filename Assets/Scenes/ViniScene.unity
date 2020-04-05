@@ -2018,7 +2018,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2525fdd408aad2a4eb62242ed56d239d, type: 3}
   audioExplosion: {fileID: 8300000, guid: f4d4b0456e8d761449732328be3ddc19, type: 3}
   audioScreams: {fileID: 8300000, guid: 719486d321d4eb24f9b00db508655db3, type: 3}
-  audioAlarm: {fileID: 8300000, guid: f4d4b0456e8d761449732328be3ddc19, type: 3}
+  audioAlarm: {fileID: 8300000, guid: dd7c7cd0cb003614a8605a0a19aa2de5, type: 3}
 --- !u!82 &834726057
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2139,7 +2139,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f4d4b0456e8d761449732328be3ddc19, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dd7c7cd0cb003614a8605a0a19aa2de5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
