@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class SfxManager : MonoBehaviour {
+public class SfxManager : SingletonManager<SfxManager> {
 
-    public AudioSource audioButton;
+    public AudioSource audioSource;
     public List<AudioClip> listAudioClips = new List<AudioClip>();
 
-    public static SfxManager instance;
+    public AudioClip audioExplosion;
+    public AudioClip audioScreams;
+    public AudioClip audioAlarm;
 
-    private void Awake() {
-        instance = this;
+    /// <summary>
+    /// Play a given audio clip
+    /// </summary>
+    /// <param name="audioClip"></param>
+    public void PlaySfx(AudioClip audioClip) {
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 
     /// <summary>
@@ -23,8 +30,8 @@ public class SfxManager : MonoBehaviour {
         }
 
         int rand = Random.Range(0, listAudioClips.Count);
-        audioButton.clip = listAudioClips[rand];
+        audioSource.clip = listAudioClips[rand];
 
-        audioButton.Play();
+        audioSource.Play();
     }
 }

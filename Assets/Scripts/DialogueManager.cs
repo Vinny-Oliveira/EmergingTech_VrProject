@@ -161,7 +161,8 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// Sound the alarm, start the timer, and enable the buttons
     /// </summary>
     public void SoundTheAlarm(AudioClip audioClip) { 
-        if (PlayDialogueOnConditions(audioClip, ref isWaitingForAlarm)) { 
+        if (PlayDialogueOnConditions(audioClip, ref isWaitingForAlarm)) {
+            SfxManager.instance.PlaySfx(SfxManager.instance.audioAlarm);
             StartCoroutine(TimerManager.instance.RunTimer());
             MethodManager.instance.ManageFunctions();
             MethodManager.instance.brokenPipe.SetActive(true);

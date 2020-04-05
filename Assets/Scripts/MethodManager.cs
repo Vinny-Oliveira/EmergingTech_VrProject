@@ -15,6 +15,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     [Header("Event and button holders")]
     public GameObject buttonHolder;
     public GameObject sphereHolder;
+    public GameObject videoCanvas;
 
     [Header("References for progression")]
     public Animator animPanelDoor;
@@ -102,18 +103,19 @@ public class MethodManager : SingletonManager<MethodManager> {
 
     protected void ExplodeObject(Hand button) {
         PlayButtonSound(button);
+        SfxManager.instance.PlaySfx(SfxManager.instance.audioExplosion);
         Debug.Log("Explosion");
     }
 
     protected void SetFireOff(Hand button) {
         PlayButtonSound(button);
+        SfxManager.instance.PlaySfx(SfxManager.instance.audioScreams);
         Debug.Log("Fire Off");
     }
 
     protected void PlayDisasterAnimation(Hand button) {
         PlayButtonSound(button);
-
-        // TODO: Play disaster animation on the security panels
+        videoCanvas.SetActive(true);
         Debug.Log("Disaster played");
     }
 
