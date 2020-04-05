@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SfxManager : SingletonManager<SfxManager> {
 
-    public AudioSource audioSource;
+    public AudioSource sfxAudioSource;
+    public AudioSource alarmAudioSource;
     public List<AudioClip> listAudioClips = new List<AudioClip>();
 
     public AudioClip audioExplosion;
@@ -17,8 +18,8 @@ public class SfxManager : SingletonManager<SfxManager> {
     /// </summary>
     /// <param name="audioClip"></param>
     public void PlaySfx(AudioClip audioClip) {
-        audioSource.clip = audioClip;
-        audioSource.Play();
+        sfxAudioSource.clip = audioClip;
+        sfxAudioSource.Play();
     }
 
     /// <summary>
@@ -30,8 +31,8 @@ public class SfxManager : SingletonManager<SfxManager> {
         }
 
         int rand = Random.Range(0, listAudioClips.Count);
-        audioSource.clip = listAudioClips[rand];
+        sfxAudioSource.clip = listAudioClips[rand];
 
-        audioSource.Play();
+        sfxAudioSource.Play();
     }
 }
