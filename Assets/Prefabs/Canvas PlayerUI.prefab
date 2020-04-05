@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 1681859103259284827}
   - component: {fileID: 4409992341111815823}
   - component: {fileID: 1845628719384054730}
+  - component: {fileID: 1794723427892533175}
   m_Layer: 0
   m_Name: Resume_Btn
   m_TagString: Untagged
@@ -383,6 +384,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!65 &1794723427892533175
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116133140258073207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 161.35959, y: 32.759995, z: 0.9999998}
+  m_Center: {x: 0.16095766, y: 0, z: 0}
 --- !u!1 &1373504842626601365
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +652,7 @@ GameObject:
   - component: {fileID: 3258663157080500690}
   - component: {fileID: 2814665836230676254}
   - component: {fileID: 5326932387195393339}
+  - component: {fileID: 5084768057855616218}
   m_Layer: 0
   m_Name: QuitToMain_Btn
   m_TagString: Untagged
@@ -766,6 +781,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!65 &5084768057855616218
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846299903878361353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 160.9538, y: 30.264158, z: 0.9999998}
+  m_Center: {x: -0.028409213, y: -0.021756219, z: 0}
 --- !u!1 &2463883994081879090
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +807,7 @@ GameObject:
   - component: {fileID: 2258384261335750426}
   - component: {fileID: 3380976293518469925}
   - component: {fileID: 8499510635147234575}
+  - component: {fileID: 148911505627724770}
   m_Layer: 0
   m_Name: Start_Btn
   m_TagString: Untagged
@@ -930,6 +959,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f100a741b74ad4ab26b151f15e969b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &148911505627724770
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463883994081879090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 161.29796, y: 29.411673, z: 0.9999998}
+  m_Center: {x: 0.08876065, y: 0.20423162, z: 0}
 --- !u!1 &2521028710854884330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1059,7 @@ GameObject:
   - component: {fileID: 6392444556258618122}
   - component: {fileID: 7148381023732692923}
   - component: {fileID: 3463793626012149364}
+  - component: {fileID: 6997973440723878419}
   m_Layer: 0
   m_Name: Yes_Btn
   m_TagString: Untagged
@@ -1146,6 +1189,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cbfc2f263450549a2c07c610e05901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6997973440723878419
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618294499503963892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 159.52, y: 30.3, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2783731504355134698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1832,7 @@ GameObject:
   - component: {fileID: 6823300408160927724}
   - component: {fileID: 785473319026236684}
   - component: {fileID: 8307122038272531887}
+  - component: {fileID: 10415907222889728}
   m_Layer: 0
   m_Name: Yes_Btn
   m_TagString: Untagged
@@ -1905,6 +1962,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a9b0517be81954faccf294e08f550a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &10415907222889728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6032081506161959072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 159.37, y: 30.4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6252660518151173544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,6 +2167,7 @@ GameObject:
   - component: {fileID: 1748383944127420237}
   - component: {fileID: 3929627328390709117}
   - component: {fileID: 5100053520782405340}
+  - component: {fileID: 2220787730226185050}
   m_Layer: 0
   m_Name: PauseBtn
   m_TagString: Untagged
@@ -2249,6 +2320,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 0}
+--- !u!65 &2220787730226185050
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353864262418197074}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 69.24564, y: 31.086758, z: 1}
+  m_Center: {x: 34.954197, y: -14.785486, z: 0}
 --- !u!1 &6520797624384670262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,6 +2499,7 @@ GameObject:
   - component: {fileID: 9010773793710155543}
   - component: {fileID: 2148250824498495741}
   - component: {fileID: 3071544201429818865}
+  - component: {fileID: 7585054451785899311}
   m_Layer: 0
   m_Name: No_Btn
   m_TagString: Untagged
@@ -2543,6 +2628,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!65 &7585054451785899311
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080410364390029697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 158.73, y: 30.7, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7873800632638154940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,6 +2654,7 @@ GameObject:
   - component: {fileID: 1671948805935503840}
   - component: {fileID: 4258592584610570780}
   - component: {fileID: 5109092783228635886}
+  - component: {fileID: 4805229448437305026}
   m_Layer: 0
   m_Name: RestartBtn
   m_TagString: Untagged
@@ -2685,6 +2784,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cbfc2f263450549a2c07c610e05901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4805229448437305026
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873800632638154940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 158.92427, y: 29.176828, z: 1}
+  m_Center: {x: 0.020237323, y: -0.12212675, z: 0}
 --- !u!1 &8330070952866039363
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,6 +3167,7 @@ GameObject:
   - component: {fileID: 5252307936961533811}
   - component: {fileID: 1598712508692674313}
   - component: {fileID: 4448661970146357174}
+  - component: {fileID: 7512192302766356983}
   m_Layer: 0
   m_Name: Quit_Btn
   m_TagString: Untagged
@@ -3172,6 +3285,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!65 &7512192302766356983
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942023146966431930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 159.39, y: 30.25, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8957118187835386101
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3387,7 @@ GameObject:
   - component: {fileID: 8370921532052365844}
   - component: {fileID: 2356101408734011855}
   - component: {fileID: 3279043255887257873}
+  - component: {fileID: 3126685753076762480}
   m_Layer: 0
   m_Name: No_Btn
   m_TagString: Untagged
@@ -3378,3 +3505,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &3126685753076762480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014250894446715384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 160.24, y: 29.27, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
