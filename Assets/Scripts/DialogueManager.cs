@@ -186,7 +186,14 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// Play the first dialogue of the engineer knocking on the door
     /// </summary>
     public void EngineerKnocksOnDoor_2() {
-        PlayDialogueOnConditions(dialogueDoorKnock2, ref isWaitingForBtnPress);
+        EngineerKnocksOnDoor_2(dialogueDoorKnock2);
+    }
+        
+    /// <summary>
+    /// Play the first dialogue of the engineer knocking on the door
+    /// </summary>
+    public void EngineerKnocksOnDoor_2(AudioClip audioClip) {
+        PlayDialogueOnConditions(audioClip, ref isWaitingForBtnPress);
     }
 
     /// <summary>
