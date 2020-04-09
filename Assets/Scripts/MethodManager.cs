@@ -186,6 +186,16 @@ public class MethodManager : SingletonManager<MethodManager> {
         }
 
         isDoorOpen = true;
+        StartCoroutine(PlayWinEvents());
+
+        Debug.Log("Exit doors are open");
+    }
+
+    IEnumerator PlayWinEvents() { 
+        SfxManager.instance.alarmAudioSource.Stop();
+
+        yield return new WaitForSeconds(3);
+
         if (SteamVR.instance != null) {
             pauseBtn_VR.SetActive(false);
             pnl_Win_VR.SetActive(true);
@@ -193,8 +203,6 @@ public class MethodManager : SingletonManager<MethodManager> {
             pauseBtn_NO_VR.SetActive(false);
             pnl_Win_NO_VR.SetActive(true);
         }
-
-        Debug.Log("Exit doors are open");
     }
 
     #endregion

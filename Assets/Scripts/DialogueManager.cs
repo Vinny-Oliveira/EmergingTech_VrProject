@@ -162,10 +162,12 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// </summary>
     public void SoundTheAlarm(AudioClip audioClip) { 
         if (PlayDialogueOnConditions(audioClip, ref isWaitingForAlarm)) {
-            SfxManager.instance.alarmAudioSource.Play();
+            SfxManager sfxManager = SfxManager.instance;
+            sfxManager.alarmAudioSource.Play();
             StartCoroutine(TimerManager.instance.RunTimer());
             MethodManager.instance.ManageFunctions();
             MethodManager.instance.brokenPipe.SetActive(true);
+            sfxManager.pipeLeakAudioSource.Play();
         }
     }
 
