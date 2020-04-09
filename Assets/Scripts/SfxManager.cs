@@ -7,6 +7,7 @@ public class SfxManager : SingletonManager<SfxManager> {
 
     public AudioSource sfxAudioSource;
     public AudioSource alarmAudioSource;
+    public AudioSource pipeLeakAudioSource;
     public List<AudioClip> listAudioClips = new List<AudioClip>();
 
     public AudioClip audioExplosion;
