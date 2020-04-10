@@ -882,6 +882,7 @@ MonoBehaviour:
   buttonHolder: {fileID: 1880874915}
   sphereHolder: {fileID: 1239660769}
   videoCanvas: {fileID: 786339104}
+  confetti: {fileID: 0}
   animPanelDoor: {fileID: 1841339171}
   brokenPipe: {fileID: 1806547234}
   fixedPipe: {fileID: 2032224659}
@@ -2040,7 +2041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxAudioSource: {fileID: 834726057}
   alarmAudioSource: {fileID: 834726059}
-  pipeLeakAudioSource: {fileID: 1806547235}
+  pipeLeakAudioSource: {fileID: 1806547236}
   listAudioClips:
   - {fileID: 8300000, guid: 9f3c00298a8a6c44481bc5ac73a539d7, type: 3}
   - {fileID: 8300000, guid: 3a7538d380b46064ca36db8b8ed048a4, type: 3}
@@ -2050,7 +2051,6 @@ MonoBehaviour:
   audioExplosion: {fileID: 8300000, guid: f4d4b0456e8d761449732328be3ddc19, type: 3}
   audioScreams: {fileID: 8300000, guid: 719486d321d4eb24f9b00db508655db3, type: 3}
   audioAlarm: {fileID: 8300000, guid: dd7c7cd0cb003614a8605a0a19aa2de5, type: 3}
-  audioPipeLeak: {fileID: 0}
 --- !u!82 &834726057
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3672,7 +3672,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1068085528}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1806547235
+--- !u!82 &1806547236
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3682,11 +3682,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f4380321f8d0f1f4ba04fc2cc54f0baf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c491b8343af71674f99ae95ce084cbe3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -16,6 +16,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     public GameObject buttonHolder;
     public GameObject sphereHolder;
     public GameObject videoCanvas;
+    public GameObject confetti;
 
     [Header("References for progression")]
     public Animator animPanelDoor;
@@ -48,8 +49,8 @@ public class MethodManager : SingletonManager<MethodManager> {
         List<UnityAction<Hand>> listActions = new List<UnityAction<Hand>> {
             DropSpheres,
             ExplodeObject,
-            SetFireOff,
-            SetFireOff,
+            DropConfetti,
+            PlayButtonSound,
             PlayDisasterAnimation,
             PlayButtonSound,
             OpenPanel,
@@ -91,32 +92,45 @@ public class MethodManager : SingletonManager<MethodManager> {
     /// Have spheres drop from the ceiling
     /// </summary>
     /// <param name="button"></param>
-    protected void DropSpheres(Hand button) {
-        PlayButtonSound(button);
-        if (sphereHolder.activeInHierarchy) {
-            return;
-        }
-        
-        sphereHolder.SetActive(true);
+    void DropSpheres(Hand button) {
+        ActivateEvent(sphereHolder, button);
         Debug.Log("Balls");
     }
 
-    protected void ExplodeObject(Hand button) {
+    /// <summary>
+    /// Drop confetti from the ceiling
+    /// </summary>
+    /// <param name="button"></param>
+    void DropConfetti(Hand button) {
+        ActivateEvent(confetti, button);
+        Debug.Log("Confetti");
+    }
+
+    /// <summary>
+    /// Play a disaster video on the screen
+    /// </summary>
+    /// <param name="button"></param>
+    void PlayDisasterAnimation(Hand button) {
+        ActivateEvent(videoCanvas, button);
+        Debug.Log("Disaster played");
+    }
+
+    void ExplodeObject(Hand button) {
         PlayButtonSound(button);
         SfxManager.instance.PlaySfx(SfxManager.instance.audioExplosion);
         Debug.Log("Explosion");
     }
 
-    protected void SetFireOff(Hand button) {
+    /// <summary>
+    /// Play a button sound and then activate a game object if it is not active
+    /// </summary>
+    /// <param name="eventObject"></param>
+    /// <param name="button"></param>
+    void ActivateEvent(GameObject eventObject, Hand button) {
         PlayButtonSound(button);
-        SfxManager.instance.PlaySfx(SfxManager.instance.audioScreams);
-        Debug.Log("Fire Off");
-    }
-
-    protected void PlayDisasterAnimation(Hand button) {
-        PlayButtonSound(button);
-        videoCanvas.SetActive(true);
-        Debug.Log("Disaster played");
+        if (!eventObject.activeInHierarchy){
+            eventObject.SetActive(true);
+        }
     }
 
     #endregion
