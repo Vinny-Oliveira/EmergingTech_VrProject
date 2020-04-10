@@ -875,6 +875,8 @@ GameObject:
   - component: {fileID: 11450312}
   - component: {fileID: 114000011273627542}
   - component: {fileID: 114000011734077242}
+  - component: {fileID: 3972596622657695077}
+  - component: {fileID: 7309846923368752339}
   m_Layer: 26
   m_Name: LeftHand
   m_TagString: Untagged
@@ -1004,6 +1006,46 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   hand: {fileID: 0}
+--- !u!114 &3972596622657695077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f511c1adaa1e94ebe7ca97bbcabd17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pose: {fileID: 0}
+  interactWithUI:
+    actionPath: /actions/default/in/InteractUI
+    needsReinit: 0
+  active: 1
+  color: {r: 0, g: 0, b: 0, a: 0}
+  thickness: 0.002
+  clickColor: {r: 0, g: 1, b: 0, a: 1}
+  holder: {fileID: 0}
+  pointer: {fileID: 0}
+  addRigidBody: 0
+  reference: {fileID: 0}
+--- !u!114 &7309846923368752339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1980890e610a754c9d40cb19138ec06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SteamVR_Controller: {fileID: 0}
+  VibrationLength: 0.1
+  HapticPulseStrength: 0.5
+  HapticFrameTime: 0.001
 --- !u!1 &160596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1058,8 @@ GameObject:
   - component: {fileID: 11401046}
   - component: {fileID: 114000011957598740}
   - component: {fileID: 114000010591715100}
+  - component: {fileID: 5294739921917311257}
+  - component: {fileID: 8551452705258699888}
   m_Layer: 26
   m_Name: RightHand
   m_TagString: Untagged
@@ -1145,6 +1189,46 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   hand: {fileID: 0}
+--- !u!114 &5294739921917311257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f511c1adaa1e94ebe7ca97bbcabd17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pose: {fileID: 0}
+  interactWithUI:
+    actionPath: /actions/default/in/InteractUI
+    needsReinit: 0
+  active: 1
+  color: {r: 0, g: 0, b: 0, a: 0}
+  thickness: 0.002
+  clickColor: {r: 0, g: 1, b: 0, a: 1}
+  holder: {fileID: 0}
+  pointer: {fileID: 0}
+  addRigidBody: 0
+  reference: {fileID: 0}
+--- !u!114 &8551452705258699888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1980890e610a754c9d40cb19138ec06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SteamVR_Controller: {fileID: 0}
+  VibrationLength: 0.1
+  HapticPulseStrength: 0.5
+  HapticFrameTime: 0.001
 --- !u!1 &165334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,10 +2876,70 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 429506}
     m_Modifications:
+    - target: {fileID: 1271633081379383002, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271633081379383002, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271633081379383002, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271633081379383002, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605914413080397602, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605914413080397602, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605914413080397602, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605914413080397602, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3929627328390709117, guid: 6cb18cc84593a8b499b7cb1445b09373,
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070553029184414569, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070553029184414569, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070553029184414569, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070553029184414569, guid: 6cb18cc84593a8b499b7cb1445b09373,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8465026642024275115, guid: 6cb18cc84593a8b499b7cb1445b09373,
         type: 3}
