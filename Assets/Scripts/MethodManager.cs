@@ -17,6 +17,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     public GameObject sphereHolder;
     public GameObject videoCanvas;
     public GameObject confetti;
+    public GameObject buttonSparks;
 
     [Header("References for progression")]
     public Animator animPanelDoor;
@@ -48,7 +49,7 @@ public class MethodManager : SingletonManager<MethodManager> {
         // List of methods to be called by the in-game panels
         List<UnityAction<Hand>> listActions = new List<UnityAction<Hand>> {
             DropSpheres,
-            ExplodeObject,
+            SparkTheButton,
             DropConfetti,
             PlayButtonSound,
             PlayDisasterAnimation,
@@ -115,10 +116,17 @@ public class MethodManager : SingletonManager<MethodManager> {
         Debug.Log("Disaster played");
     }
 
-    void ExplodeObject(Hand button) {
-        PlayButtonSound(button);
-        SfxManager.instance.PlaySfx(SfxManager.instance.audioExplosion);
-        Debug.Log("Explosion");
+    /// <summary>
+    /// Have the button malfunction and play spark particles
+    /// </summary>
+    /// <param name="button"></param>
+    void SparkTheButton(Hand button) {
+        if (!buttonSparks.activeInHierarchy){
+            PlayButtonSound(button);
+            buttonSparks.transform.position = button.transform.position;
+            buttonSparks.SetActive(true);
+        }
+        Debug.Log("Button malfunction");
     }
 
     /// <summary>
