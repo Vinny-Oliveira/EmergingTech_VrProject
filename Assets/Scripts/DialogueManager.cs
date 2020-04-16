@@ -65,18 +65,18 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// <returns></returns>
     IEnumerator PlayDialogueChain() {
         // Set initial rotation
-        float initialRotation = playerCamera.localRotation.eulerAngles.y;
+        //float initialRotation = playerCamera.localRotation.eulerAngles.y;
         yield return new WaitForSeconds(dialogueInterval);
 
         // Play the dialoque that starts the game
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueStart));
 
-        // Check if player has turned around to face the button panel
-        while (!(playerCamera.localRotation.eulerAngles.y > initialRotation + TURN_AROUND_ANGLE && 
-                 playerCamera.localRotation.eulerAngles.y < initialRotation + 360f - TURN_AROUND_ANGLE) && 
-               !isSkipped) {
-            yield return StartCoroutine(PlayEntireDialogue(dialogueTurnAround));
-        }
+        //// Check if player has turned around to face the button panel
+        //while (!(playerCamera.localRotation.eulerAngles.y > initialRotation + TURN_AROUND_ANGLE && 
+        //         playerCamera.localRotation.eulerAngles.y < initialRotation + 360f - TURN_AROUND_ANGLE) && 
+        //       !isSkipped) {
+        //    yield return StartCoroutine(PlayEntireDialogue(dialogueTurnAround));
+        //}
 
         // Play the following dialogue chain after the player has turned around
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueFacePanel));
