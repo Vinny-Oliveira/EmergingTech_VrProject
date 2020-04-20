@@ -168,6 +168,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
             MethodManager.instance.ManageFunctions();
             MethodManager.instance.brokenPipe.SetActive(true);
             sfxManager.pipeLeakAudioSource.Play();
+            LightChanger.instance.StartDimmer();
         }
     }
 

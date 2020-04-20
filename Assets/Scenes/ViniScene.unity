@@ -2032,6 +2032,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488814461}
   m_CullTransparentMesh: 0
+--- !u!1 &499932835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6833082499784424292, guid: 241f3feda0902de42a28b7108f0649ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1068085528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &499932836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499932835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3727c7ef2920e24991f074c07a7734a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomLight: {fileID: 499932837}
+  range: 50
+  changer: -10
+--- !u!108 &499932837 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 6833082499784424293, guid: 241f3feda0902de42a28b7108f0649ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1068085528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &525889856
 GameObject:
   m_ObjectHideFlags: 0

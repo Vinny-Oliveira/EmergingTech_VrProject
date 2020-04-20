@@ -244,6 +244,7 @@ public class MethodManager : SingletonManager<MethodManager> {
 
     IEnumerator PlayWinEvents() { 
         SfxManager.instance.alarmAudioSource.Stop();
+        LightChanger.instance.StopDimmer();
 
         yield return new WaitForSeconds(3);
 
