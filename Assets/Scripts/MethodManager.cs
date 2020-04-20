@@ -15,7 +15,10 @@ public class MethodManager : SingletonManager<MethodManager> {
     [Header("Event and button holders")]
     public GameObject buttonHolder;
     public GameObject sphereHolder;
-    public GameObject videoCanvas;
+    public GameObject videoCanvas1;
+    public GameObject videoCanvas2;
+    public GameObject videoCanvas3;
+    public GameObject videoCanvas4;
     public GameObject confetti;
     public GameObject buttonSparks;
 
@@ -52,7 +55,10 @@ public class MethodManager : SingletonManager<MethodManager> {
             SparkTheButton,
             DropConfetti,
             PlayButtonSound,
-            PlayDisasterAnimation,
+            PlayDisasterAnimation1,
+            PlayDisasterAnimation2,
+            PlayDisasterAnimation3,
+            PlayDisasterAnimation4,
             PlayButtonSound,
             OpenPanel,
             ReleasePressure,
@@ -111,9 +117,21 @@ public class MethodManager : SingletonManager<MethodManager> {
     /// Play a disaster video on the screen
     /// </summary>
     /// <param name="button"></param>
-    void PlayDisasterAnimation(Hand button) {
-        ActivateEvent(videoCanvas, button);
-        Debug.Log("Disaster played");
+    void PlayDisasterAnimation1(Hand button) {
+        ActivateEvent(videoCanvas1, button);
+        Debug.Log("Disaster 1 played");
+    }
+    void PlayDisasterAnimation2(Hand button) {
+        ActivateEvent(videoCanvas2, button);
+        Debug.Log("Disaster 2 played");
+    }
+    void PlayDisasterAnimation3(Hand button) {
+        ActivateEvent(videoCanvas3, button);
+        Debug.Log("Disaster 3 played");
+    }
+    void PlayDisasterAnimation4(Hand button) {
+        ActivateEvent(videoCanvas4, button);
+        Debug.Log("Disaster 4 played");
     }
 
     /// <summary>
