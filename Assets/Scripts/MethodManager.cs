@@ -21,6 +21,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     public GameObject videoCanvas4;
     public GameObject confetti;
     public GameObject buttonSparks;
+    public Animator animWall;
 
     [Header("References for progression")]
     public Animator animPanelDoor;
@@ -59,6 +60,7 @@ public class MethodManager : SingletonManager<MethodManager> {
             PlayDisasterAnimation2,
             PlayDisasterAnimation3,
             PlayDisasterAnimation4,
+            AnimateWall,
             PlayButtonSound,
             OpenPanel,
             ReleasePressure,
@@ -131,6 +133,15 @@ public class MethodManager : SingletonManager<MethodManager> {
     }
     void PlayDisasterAnimation4(Hand button) {
         ActivateEvent(videoCanvas4, button);
+        Debug.Log("Disaster 4 played");
+    }
+
+    /// <summary>
+    /// Play the wall animation
+    /// </summary>
+    /// <param name="button"></param>
+    void AnimateWall(Hand button) {
+        animWall.SetTrigger(animWall.parameters[0].name);
         Debug.Log("Disaster 4 played");
     }
 
