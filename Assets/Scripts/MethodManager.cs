@@ -22,6 +22,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     public GameObject confetti;
     public GameObject buttonSparks;
     public Animator animWall;
+    public GameObject secretRoomLight;
 
     [Header("References for progression")]
     public Animator animPanelDoor;
@@ -142,7 +143,8 @@ public class MethodManager : SingletonManager<MethodManager> {
     /// <param name="button"></param>
     void AnimateWall(Hand button) {
         animWall.SetTrigger(animWall.parameters[0].name);
-        Debug.Log("Disaster 4 played");
+        secretRoomLight.SetActive(true);
+        Debug.Log("Rotate Wall");
     }
 
     /// <summary>
