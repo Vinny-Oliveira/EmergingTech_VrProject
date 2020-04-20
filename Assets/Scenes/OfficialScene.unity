@@ -491,6 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonHolder: {fileID: 1880874915}
   sphereHolder: {fileID: 1462165456}
+  videoCanvas: {fileID: 0}
   animPanelDoor: {fileID: 0}
   brokenPipe: {fileID: 0}
   fixedPipe: {fileID: 0}
@@ -2847,6 +2848,36 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Lever2
     clip: {fileID: 8300000, guid: f4fb39d057258a44d8ceb4961d22e2bf, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - name: Alarm
+    clip: {fileID: 8300000, guid: dd7c7cd0cb003614a8605a0a19aa2de5, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - name: Button3
+    clip: {fileID: 8300000, guid: 76a811c4ff297a447b6499ae6ae14d3a, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - name: Button4
+    clip: {fileID: 8300000, guid: d20f98e2c3640d4478aca0de657a1edc, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - name: Button5
+    clip: {fileID: 8300000, guid: b9874682a5c2c0d4cb5b874b284e8481, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - name: DExplosion1
+    clip: {fileID: 8300000, guid: 657daf032c10d904f8a52c98e8681d16, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - name: DExplosion2
+    clip: {fileID: 8300000, guid: 719486d321d4eb24f9b00db508655db3, type: 3}
     volume: 1
     pitch: 0
     source: {fileID: 0}
