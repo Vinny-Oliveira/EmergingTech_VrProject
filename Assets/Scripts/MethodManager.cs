@@ -95,7 +95,7 @@ public class MethodManager : SingletonManager<MethodManager> {
         for (int i = 0; i < vrButtons.Count; i++) {
             HoverButton button = vrButtons[i];
             int index = i % unityActions.Count;
-            button.onButtonDown.AddListener(unityActions[index]);
+            button.onButtonIsPressed.AddListener(unityActions[index]);
         }
     }
 
