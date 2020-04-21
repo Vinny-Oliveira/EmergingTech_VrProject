@@ -9,8 +9,9 @@ public class TimerManager : SingletonManager<TimerManager> {
 
     public int intTimer;
     public TextMeshProUGUI tmpTimer;
-    public GameObject pnl_GameOver_VR;
-    public GameObject pnl_GameOver_NO_VR;
+    public GameObject gamePanel;
+    public GameObject restartPanel;
+    public LightChanger lightChanger;
 
     /// <summary>
     /// Run the timer
@@ -34,12 +35,18 @@ public class TimerManager : SingletonManager<TimerManager> {
         }
 
         // Activate the game over panel
-        if (!MethodManager.instance.IsDoorOpen()) { 
-            if (SteamVR.instance != null) {
-                pnl_GameOver_VR.SetActive(true);
-            } else {
-                pnl_GameOver_NO_VR.SetActive(true);
-            }
+        if (!MethodManager.instance.IsDoorOpen()) {
+            PlayLossEvent();
         }
+    }
+
+    /// <summary>
+    /// Play the event for game loss
+    /// </summary>
+    public void PlayLossEvent() {
+        DialogueManager.instance.PlayEndGameDialogue(false);
+        gamePanel.SetActive(false);
+        restartPanel.SetActive(true);
+        lightChanger.StartLightIncrease();
     }
 }

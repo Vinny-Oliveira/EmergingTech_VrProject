@@ -9,6 +9,8 @@ public class LightChanger : SingletonManager<LightChanger> {
     public int range = 50;
     public int changer = -10;
 
+    public float intensityBump = 10f;
+
     // Starting colors
     float r_start, g_start, b_start;
 
@@ -94,8 +96,26 @@ public class LightChanger : SingletonManager<LightChanger> {
         }
     }
 
+    /// <summary>
+    /// Change the light when the player loses
+    /// </summary>
+    public void StartLightIncrease() {
+        StopDimmer();
+        StartCoroutine(IncreaseLightIntensity());
+    }
 
-    //public void PlayLossEvent() { 
-        
-    //}
+    /// <summary>
+    /// Gradually increase light intensity
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator IncreaseLightIntensity() {
+        float max_intensity = roomLight.intensity + intensityBump;
+
+        while (roomLight.intensity < max_intensity) {
+            roomLight.intensity += 0.1f;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        SfxManager.instance.PauseEverySfx();
+    }
 }
