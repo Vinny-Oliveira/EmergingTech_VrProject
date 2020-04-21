@@ -79,6 +79,10 @@ public class LightChanger : SingletonManager<LightChanger> {
         return newParam / 255;
     }
 
+    /// <summary>
+    /// Gradually change the color of the room light within a range
+    /// </summary>
+    /// <returns></returns>
     IEnumerator ChangeColor() {
         while (canDimmer) { 
             float r = ChangeColorParameter(roomLight.color.r, min_r, max_r, ref r_changer);
@@ -89,4 +93,9 @@ public class LightChanger : SingletonManager<LightChanger> {
             yield return new WaitForSeconds(0.1f);
         }
     }
+
+
+    //public void PlayLossEvent() { 
+        
+    //}
 }

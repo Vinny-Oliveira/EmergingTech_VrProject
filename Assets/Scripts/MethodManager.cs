@@ -15,11 +15,15 @@ public class MethodManager : SingletonManager<MethodManager> {
     [Header("Event and button holders")]
     public GameObject buttonHolder;
     public GameObject sphereHolder;
+
+    [Header("Videos")]
     public GameObject videoCanvas1;
     public GameObject videoCanvas2;
     public GameObject videoCanvas3;
     public GameObject videoCanvas4;
     public GameObject videoHolder;
+    
+    [Header("Particles and Animations")]
     public GameObject confetti;
     public GameObject buttonSparks;
     public Animator animWall;
@@ -30,6 +34,8 @@ public class MethodManager : SingletonManager<MethodManager> {
     public GameObject brokenPipe;
     public GameObject fixedPipe;
     public GameObject winScreen;
+    public GameObject gamePanel;
+    public GameObject restartPanel;
 
     // Control variables
     bool canDropSpheres = false;
@@ -89,7 +95,7 @@ public class MethodManager : SingletonManager<MethodManager> {
         for (int i = 0; i < vrButtons.Count; i++) {
             HoverButton button = vrButtons[i];
             int index = i % unityActions.Count;
-            button.onButtonIsPressed.AddListener(unityActions[index]);
+            button.onButtonDown.AddListener(unityActions[index]);
         }
     }
 
@@ -274,6 +280,8 @@ public class MethodManager : SingletonManager<MethodManager> {
 
         winScreen.SetActive(true);
         DialogueManager.instance.PlayEndGameDialogue(true);
+        gamePanel.SetActive(false);
+        restartPanel.SetActive(true);
     }
 
     #endregion
