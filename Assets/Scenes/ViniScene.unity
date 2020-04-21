@@ -1069,6 +1069,7 @@ MonoBehaviour:
   videoCanvas2: {fileID: 1068933685313485203}
   videoCanvas3: {fileID: 82945634571006136}
   videoCanvas4: {fileID: 144222106570998959}
+  videoHolder: {fileID: 1980793355}
   confetti: {fileID: 652821106}
   buttonSparks: {fileID: 1223043426}
   animWall: {fileID: 262617827}
@@ -1076,10 +1077,7 @@ MonoBehaviour:
   animPanelDoor: {fileID: 1841339171}
   brokenPipe: {fileID: 1806547234}
   fixedPipe: {fileID: 2032224659}
-  pauseBtn_VR: {fileID: 486135543}
-  pauseBtn_NO_VR: {fileID: 1698960527}
-  pnl_Win_VR: {fileID: 1351365931}
-  pnl_Win_NO_VR: {fileID: 1107999125}
+  winScreen: {fileID: 1662988393}
 --- !u!4 &165397203
 Transform:
   m_ObjectHideFlags: 0
@@ -1522,12 +1520,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8b260ee5578a2545bce3a9b7bab5a9e, type: 3}
---- !u!1 &486135543 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3266417050700184061, guid: dc06161b6d97feb419f45f03b62e14b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 32987974}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &525889856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1570,8 @@ MonoBehaviour:
   dialogueDoorKnock2: {fileID: 8300000, guid: afa07cff56011bd4f8e94892d96f772e, type: 3}
   dialoguePressDoorButton: {fileID: 8300000, guid: d7349d9972893794dba2e53020ae1258,
     type: 3}
+  dialogueWin: {fileID: 8300000, guid: c8c14691f07c64e438980eaec75bc5ff, type: 3}
+  dialogueLoss: {fileID: 8300000, guid: 627eaba11b3ceec4ca4cb27c61d3bb1a, type: 3}
 --- !u!82 &525889858
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3760,12 +3754,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1068085528}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1107999125 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5290505703646873159, guid: dc06161b6d97feb419f45f03b62e14b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 32987974}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1112015354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4400,12 +4388,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7942637571821503533, guid: d8b260ee5578a2545bce3a9b7bab5a9e,
     type: 3}
   m_PrefabInstance: {fileID: 597506503}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1351365931 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5944114401134421977, guid: dc06161b6d97feb419f45f03b62e14b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 32987974}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1356283981 stripped
 GameObject:
@@ -5311,12 +5293,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 428928, guid: 73ac470d3d909d645a6c89a4664b6849,
     type: 3}
   m_PrefabInstance: {fileID: 1695274467}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1698960527 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3909897869450614883, guid: dc06161b6d97feb419f45f03b62e14b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 32987974}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1726790795
 GameObject:

@@ -19,7 +19,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     public GameObject videoCanvas2;
     public GameObject videoCanvas3;
     public GameObject videoCanvas4;
-    //public GameObject videoHolder;
+    public GameObject videoHolder;
     public GameObject confetti;
     public GameObject buttonSparks;
     public Animator animWall;
@@ -29,10 +29,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     public Animator animPanelDoor;
     public GameObject brokenPipe;
     public GameObject fixedPipe;
-    public GameObject pauseBtn_VR;
-    public GameObject pauseBtn_NO_VR;
-    public GameObject pnl_Win_VR;
-    public GameObject pnl_Win_NO_VR;
+    public GameObject winScreen;
 
     // Control variables
     bool canDropSpheres = false;
@@ -252,7 +249,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     void OpenDoors(Hand button) {
         PlayButtonSound(button);
 
-        if (!isPanel_Open || !isPressureReleased || isDoorOpen) {
+        if (!isPanel_Open || !isPressureReleased || isDoorOpen || TimerManager.instance.intTimer < 1) {
             PlayButtonSound(button);
             return;
         }
@@ -263,21 +260,20 @@ public class MethodManager : SingletonManager<MethodManager> {
         Debug.Log("Exit doors are open");
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     IEnumerator PlayWinEvents() { 
         SfxManager.instance.alarmAudioSource.Stop();
         LightChanger.instance.StopDimmer();
         buttonHolder.GetComponentInChildren<RandomizeMaterials>().SetRandomizerOff();
-        
+        videoHolder.SetActive(false);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
 
-        if (SteamVR.instance != null) {
-            pauseBtn_VR.SetActive(false);
-            pnl_Win_VR.SetActive(true);
-        } else {
-            pauseBtn_NO_VR.SetActive(false);
-            pnl_Win_NO_VR.SetActive(true);
-        }
+        winScreen.SetActive(true);
+        DialogueManager.instance.PlayEndGameDialogue(true);
     }
 
     #endregion

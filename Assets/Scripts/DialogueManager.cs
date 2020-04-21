@@ -27,6 +27,8 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     public AudioClip dialogueDoorKnock1;
     public AudioClip dialogueDoorKnock2;
     public AudioClip dialoguePressDoorButton;
+    public AudioClip dialogueWin;
+    public AudioClip dialogueLoss;
 
     // Dialogue control
     bool isGamePaused = false;
@@ -164,6 +166,18 @@ public class DialogueManager : SingletonManager<DialogueManager> {
             }
             
             LightChanger.instance.StartDimmer();
+        }
+    }
+
+    /// <summary>
+    /// Play dialogues for win and loss conditions
+    /// </summary>
+    /// <param name="isGameWon"></param>
+    public void PlayEndGameDialogue(bool isGameWon) {
+        if (isGameWon) {
+            StartCoroutine(PlayEntireDialogue(dialogueWin));
+        } else {
+            StartCoroutine(PlayEntireDialogue(dialogueLoss));
         }
     }
 
