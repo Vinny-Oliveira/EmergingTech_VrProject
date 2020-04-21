@@ -19,6 +19,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     public GameObject videoCanvas2;
     public GameObject videoCanvas3;
     public GameObject videoCanvas4;
+    //public GameObject videoHolder;
     public GameObject confetti;
     public GameObject buttonSparks;
     public Animator animWall;
@@ -64,6 +65,10 @@ public class MethodManager : SingletonManager<MethodManager> {
             PlayDisasterAnimation2,
             PlayDisasterAnimation3,
             PlayDisasterAnimation4,
+            //PlayDisasterAnimation,
+            //PlayDisasterAnimation,
+            //PlayDisasterAnimation,
+            //PlayDisasterAnimation,
             AnimateWall,
             PlayButtonSound,
             OpenPanel,
@@ -141,6 +146,14 @@ public class MethodManager : SingletonManager<MethodManager> {
         ActivateEvent(videoCanvas4, button);
         Debug.Log("Disaster 4 played");
     }
+    //void PlayDisasterAnimation(Hand button) {
+    //    List<Transform> videos = videoHolder.GetComponentsInChildren<Transform>(true).ToList();
+    //    ListRandomizer.Randomize(ref videos);
+
+    //    GameObject videoCanvas = videos.Find(x => !x.gameObject.activeInHierarchy).gameObject;
+    //    ActivateEvent(videoCanvas, button);
+    //    Debug.Log("Disaster 4 played");
+    //}
 
     /// <summary>
     /// Play the wall animation
