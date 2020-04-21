@@ -1079,6 +1079,7 @@ MonoBehaviour:
   confetti: {fileID: 652821106}
   buttonSparks: {fileID: 1223043426}
   animWall: {fileID: 262617827}
+  secretRoomLight: {fileID: 1356283981}
   animPanelDoor: {fileID: 1841339171}
   brokenPipe: {fileID: 1806547234}
   fixedPipe: {fileID: 2032224659}
@@ -2051,8 +2052,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomLight: {fileID: 499932837}
-  range: 50
-  changer: -10
+  range: 100
+  changer: 7
 --- !u!108 &499932837 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 6833082499784424293, guid: 241f3feda0902de42a28b7108f0649ab,
@@ -2105,9 +2106,9 @@ MonoBehaviour:
     type: 3}
   dialogueSoundAlarmByIdle: {fileID: 8300000, guid: ffa34323668f12242ab8e3b23cac923f,
     type: 3}
-  dialogueDoorKnock1: {fileID: 8300000, guid: 63c374c19fe4f5d4c9ea6c0bc02c9890, type: 3}
-  dialogueDoorKnock2: {fileID: 8300000, guid: d4c32a709dda77b4981866e50b78cc4b, type: 3}
-  dialoguePressDoorButton: {fileID: 8300000, guid: 03a1e4af1dc6d64499454186953523d6,
+  dialogueDoorKnock1: {fileID: 8300000, guid: e2dc66cee1fb356439e369428354e65e, type: 3}
+  dialogueDoorKnock2: {fileID: 8300000, guid: afa07cff56011bd4f8e94892d96f772e, type: 3}
+  dialoguePressDoorButton: {fileID: 8300000, guid: d7349d9972893794dba2e53020ae1258,
     type: 3}
 --- !u!82 &525889858
 AudioSource:
@@ -3946,6 +3947,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 8444822525486091054, guid: 241f3feda0902de42a28b7108f0649ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 241f3feda0902de42a28b7108f0649ab, type: 3}
 --- !u!1001 &1082152965
@@ -5042,6 +5048,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000014195058408, guid: 88075a54c7fb1484ba25db394b612917,
     type: 3}
   m_PrefabInstance: {fileID: 1354462836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1356283981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8444822525486091054, guid: 241f3feda0902de42a28b7108f0649ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1068085528}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1439314820 stripped
 Transform:
