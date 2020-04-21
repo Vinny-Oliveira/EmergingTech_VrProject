@@ -267,7 +267,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     }
 
     /// <summary>
-    /// 
+    /// Play the win events
     /// </summary>
     /// <returns></returns>
     IEnumerator PlayWinEvents() { 
