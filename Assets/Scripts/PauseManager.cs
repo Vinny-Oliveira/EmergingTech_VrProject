@@ -15,7 +15,7 @@ public class PauseManager : MonoBehaviour {
             dialogueManager = FindObjectOfType<DialogueManager>();
         }
 
-        ResumeGame(); // Make sure the game is not paused when a level starts
+        //ResumeGame(); // Make sure the game is not paused when a level starts
     }
 
     /// <summary>
