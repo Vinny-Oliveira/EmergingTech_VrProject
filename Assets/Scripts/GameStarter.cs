@@ -6,6 +6,7 @@ public class GameStarter : MonoBehaviour {
 
     public void StartGame() {
         DialogueManager.instance.StartDialogueChain();
+        Time.timeScale = 1f;
     }
 
 }

@@ -486,7 +486,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Quit Game
+  m_Text: Restart Game
 --- !u!114 &109601041800525251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,7 +512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2026861879894035593}
   m_Layer: 0
-  m_Name: QuitFromStartPanel
+  m_Name: QuitPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 3880365077857243101}
   - component: {fileID: 5628437726811054046}
   - component: {fileID: 5279213790717975530}
-  - component: {fileID: 5690056136407323079}
+  - component: {fileID: 7683971659647146787}
   m_Layer: 0
   m_Name: YesBtn
   m_TagString: Untagged
@@ -731,8 +731,8 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5690056136407323079}
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 7683971659647146787}
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -767,7 +767,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
   m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
---- !u!114 &5690056136407323079
+--- !u!114 &7683971659647146787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1865012597677874886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72a9b0517be81954faccf294e08f550a, type: 3}
+  m_Script: {fileID: 11500000, guid: 30cbfc2f263450549a2c07c610e05901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2116959496630522435
@@ -2033,7 +2033,7 @@ GameObject:
   - component: {fileID: 8136701592290984762}
   - component: {fileID: 4215549370123648827}
   m_Layer: 0
-  m_Name: QuitTxt
+  m_Name: RestartTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2097,7 +2097,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Quit?
+  m_Text: Restart?
 --- !u!114 &4215549370123648827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2314,7 +2314,7 @@ GameObject:
   - component: {fileID: 4864429366194884133}
   - component: {fileID: 8095366759997396126}
   m_Layer: 0
-  m_Name: QuitGameButton
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3584,7 +3584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3021344749381519109}
   m_Layer: 0
-  m_Name: QuitFromPausePanel
+  m_Name: RestartPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3800,7 +3800,18 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7243710611764469066}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1488440317959882118}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
