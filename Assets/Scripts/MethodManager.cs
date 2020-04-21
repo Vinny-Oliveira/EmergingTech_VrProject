@@ -266,10 +266,8 @@ public class MethodManager : SingletonManager<MethodManager> {
     IEnumerator PlayWinEvents() { 
         SfxManager.instance.alarmAudioSource.Stop();
         LightChanger.instance.StopDimmer();
-        RandomizeMaterials[] buttons = buttonHolder.GetComponentsInChildren<RandomizeMaterials>();
-        foreach (var button in buttons) {
-            button.SetRandomizerOff();
-        }
+        buttonHolder.GetComponentInChildren<RandomizeMaterials>().SetRandomizerOff();
+        
 
         yield return new WaitForSeconds(3);
 
