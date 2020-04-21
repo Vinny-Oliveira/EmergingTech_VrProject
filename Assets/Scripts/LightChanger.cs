@@ -87,7 +87,6 @@ public class LightChanger : SingletonManager<LightChanger> {
 
             roomLight.color = new Color(r, g, b);
             yield return new WaitForSeconds(0.1f);
-            Debug.Log(r);
         }
     }
 }
