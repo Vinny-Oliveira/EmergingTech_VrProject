@@ -33,6 +33,9 @@ public class MethodManager : SingletonManager<MethodManager> {
     public GameObject pnl_Win_VR;
     public GameObject pnl_Win_NO_VR;
 
+    // Control variables
+    bool canDropSpheres = false;
+
     // Winning condition sequence
     bool isPanel_Open = false;
     bool isPressureReleased = false;
@@ -103,8 +106,10 @@ public class MethodManager : SingletonManager<MethodManager> {
     /// </summary>
     /// <param name="button"></param>
     void DropSpheres(Hand button) {
-        ActivateEvent(sphereHolder, button);
-        Debug.Log("Balls");
+        if (canDropSpheres) { 
+            ActivateEvent(sphereHolder, button);
+            Debug.Log("Balls");
+        }
     }
 
     /// <summary>
@@ -144,6 +149,7 @@ public class MethodManager : SingletonManager<MethodManager> {
     void AnimateWall(Hand button) {
         animWall.SetTrigger(animWall.parameters[0].name);
         secretRoomLight.SetActive(true);
+        canDropSpheres = true;
         Debug.Log("Rotate Wall");
     }
 
