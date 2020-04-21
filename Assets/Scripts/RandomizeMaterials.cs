@@ -22,6 +22,7 @@ public class RandomizeMaterials : MonoBehaviour {
     /// Start a coroutine to switch the material of the button
     /// </summary>
     public void StartRandomizer() {
+        canRandomize = true;
         StartCoroutine(SwitchToRandomMaterial());
     }
 

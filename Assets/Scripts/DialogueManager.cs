@@ -164,10 +164,18 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         if (PlayDialogueOnConditions(audioClip, ref isWaitingForAlarm)) {
             SfxManager sfxManager = SfxManager.instance;
             sfxManager.alarmAudioSource.Play();
-            StartCoroutine(TimerManager.instance.RunTimer());
-            MethodManager.instance.ManageFunctions();
-            MethodManager.instance.brokenPipe.SetActive(true);
             sfxManager.pipeLeakAudioSource.Play();
+
+            StartCoroutine(TimerManager.instance.RunTimer());
+
+            MethodManager methodManager = MethodManager.instance;
+            methodManager.ManageFunctions();
+            methodManager.brokenPipe.SetActive(true);
+            RandomizeMaterials[] buttons = methodManager.buttonHolder.GetComponentsInChildren<RandomizeMaterials>();
+            foreach (var button in buttons) {
+                button.StartRandomizer();
+            }
+            
             LightChanger.instance.StartDimmer();
         }
     }
