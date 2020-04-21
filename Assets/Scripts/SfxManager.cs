@@ -36,4 +36,22 @@ public class SfxManager : SingletonManager<SfxManager> {
 
         sfxAudioSource.Play();
     }
+
+    /// <summary>
+    /// Pause all audio sources
+    /// </summary>
+    public void PauseEverySfx() {
+        sfxAudioSource.Pause();
+        alarmAudioSource.Pause();
+        pipeLeakAudioSource.Pause();
+    }
+
+    /// <summary>
+    /// Unpause all audio sources
+    /// </summary>
+    public void UnPauseEverySfx() {
+        sfxAudioSource.UnPause();
+        alarmAudioSource.UnPause();
+        pipeLeakAudioSource.UnPause();
+    }
 }

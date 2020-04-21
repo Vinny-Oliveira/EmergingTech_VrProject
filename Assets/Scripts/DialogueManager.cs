@@ -64,21 +64,10 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// </summary>
     /// <returns></returns>
     IEnumerator PlayDialogueChain() {
-        // Set initial rotation
-        //float initialRotation = playerCamera.localRotation.eulerAngles.y;
         yield return new WaitForSeconds(dialogueInterval);
 
         // Play the dialoque that starts the game
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueStart));
-
-        //// Check if player has turned around to face the button panel
-        //while (!(playerCamera.localRotation.eulerAngles.y > initialRotation + TURN_AROUND_ANGLE && 
-        //         playerCamera.localRotation.eulerAngles.y < initialRotation + 360f - TURN_AROUND_ANGLE) && 
-        //       !isSkipped) {
-        //    yield return StartCoroutine(PlayEntireDialogue(dialogueTurnAround));
-        //}
-
-        // Play the following dialogue chain after the player has turned around
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueFacePanel));
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueBackToWork));
         if (!isSkipped) yield return StartCoroutine(PlayEntireDialogue(dialogueSayHoldOn));
@@ -86,15 +75,12 @@ public class DialogueManager : SingletonManager<DialogueManager> {
 
         // Sound the alarm if the player presses a button or if nothing is pressed for a while
         yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForAlarm, SoundTheAlarm, (myBool) => { isWaitingForAlarm = myBool; }, () => isWaitingForAlarm));
-        yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
 
         // Have engineers come to the door if a button is pushed or if nothing is done for a while
         yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForDoor, EngineerKnocksOnDoor_1, (myBool) => { isWaitingForDoor = myBool; }, () => isWaitingForDoor));
-        yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
 
         // Engineers cannot open the door - this dialogue is skipped if the door button is pushed
         yield return StartCoroutine(PlayDialogueAfterWaiting(waitTimeForButton, EngineerKnocksOnDoor_2, (myBool) => { isWaitingForBtnPress = myBool; }, () => isWaitingForBtnPress));
-        yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
     }
 
     /// <summary>
@@ -148,6 +134,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         if (ConditionChecker()) {
             SoundAction();
         }
+        yield return new WaitUntil(() => (!audioDialogue.isPlaying && !isGamePaused));
     }
 
     /// <summary>
@@ -209,10 +196,18 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     }
 
     /// <summary>
-    /// Set the pause state of the game to work with dialogues
+    /// Pause dialogues
     /// </summary>
-    /// <param name="pauseState"></param>
-    public void SetGamePaused(bool pauseState) {
-        isGamePaused = pauseState;
+    public void PauseDialogues() {
+        isGamePaused = true;
+        audioDialogue.Pause();
+    }
+
+    /// <summary>
+    /// Unpause dialogues
+    /// </summary>
+    public void UnPauseDialogues() {
+        isGamePaused = false;
+        audioDialogue.UnPause();
     }
 }

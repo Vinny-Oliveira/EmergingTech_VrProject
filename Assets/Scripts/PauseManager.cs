@@ -8,23 +8,13 @@ using UnityEngine;
 /// </summary>
 public class PauseManager : MonoBehaviour {
 
-    public DialogueManager dialogueManager;
-
-    private void Start(){
-        if (dialogueManager == null) {
-            dialogueManager = FindObjectOfType<DialogueManager>();
-        }
-
-        //ResumeGame(); // Make sure the game is not paused when a level starts
-    }
-
     /// <summary>
     /// Pause the game
     /// </summary>
     public void PauseGame() {
         Time.timeScale = 0;
-        dialogueManager.audioDialogue.Pause();
-        dialogueManager.SetGamePaused(true);
+        DialogueManager.instance.PauseDialogues();
+        SfxManager.instance.PauseEverySfx();
     }
 
     /// <summary>
@@ -32,8 +22,8 @@ public class PauseManager : MonoBehaviour {
     /// </summary>
     public void ResumeGame() {
         Time.timeScale = 1;
-        dialogueManager.audioDialogue.UnPause();
-        dialogueManager.SetGamePaused(false);
+        DialogueManager.instance.UnPauseDialogues();
+        SfxManager.instance.UnPauseEverySfx();
     }
 
 }
