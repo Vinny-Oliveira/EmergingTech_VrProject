@@ -2757,6 +2757,9 @@ MonoBehaviour:
   gamePanel: {fileID: 1772871687}
   restartPanel: {fileID: 712531976}
   lightChanger: {fileID: 2102618917}
+  gameOverScene:
+    m_SceneAsset: {fileID: 102900000, guid: 92d56c9c65a9a72479503b521c2b52fe, type: 3}
+    m_SceneName: GameOverScene
 --- !u!4 &760223994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7942637571821503533, guid: d8b260ee5578a2545bce3a9b7bab5a9e,

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ViniScene.unity
     guid: cb624d53b4133c34dbe35b700065d017
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 92d56c9c65a9a72479503b521c2b52fe
   m_configObjects: {}
