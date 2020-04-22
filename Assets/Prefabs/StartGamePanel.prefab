@@ -570,7 +570,6 @@ GameObject:
   - component: {fileID: 3880365077857243101}
   - component: {fileID: 5279213790717975530}
   - component: {fileID: 7683971659647146787}
-  - component: {fileID: 845555996182483137}
   m_Layer: 0
   m_Name: YesBtn
   m_TagString: Untagged
@@ -784,19 +783,6 @@ MonoBehaviour:
   sceneToLoad:
     m_SceneAsset: {fileID: 102900000, guid: cb624d53b4133c34dbe35b700065d017, type: 3}
     m_SceneName: ViniScene
---- !u!65 &845555996182483137
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865012597677874886}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
-  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &2116959496630522435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,7 +1829,6 @@ GameObject:
   - component: {fileID: 6871973435512679251}
   - component: {fileID: 8353797042585315067}
   - component: {fileID: 1387620520295616689}
-  - component: {fileID: 4445875072123477208}
   m_Layer: 0
   m_Name: YesBtn
   m_TagString: Untagged
@@ -2054,19 +2039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a9b0517be81954faccf294e08f550a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &4445875072123477208
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4184363746316906571}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
-  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &4245612346028127353
 GameObject:
   m_ObjectHideFlags: 0
