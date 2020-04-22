@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3882614282733674828}
   - component: {fileID: 7153214029328652523}
   - component: {fileID: 2246104736611069555}
+  - component: {fileID: 2041623513309224674}
   m_Layer: 0
   m_Name: PausedQuestionTxt
   m_TagString: Untagged
@@ -93,6 +94,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!65 &2041623513309224674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138108973654061756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
+  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &438365764269750632
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +570,7 @@ GameObject:
   - component: {fileID: 3880365077857243101}
   - component: {fileID: 5279213790717975530}
   - component: {fileID: 7683971659647146787}
+  - component: {fileID: 845555996182483137}
   m_Layer: 0
   m_Name: YesBtn
   m_TagString: Untagged
@@ -769,6 +784,19 @@ MonoBehaviour:
   sceneToLoad:
     m_SceneAsset: {fileID: 102900000, guid: cb624d53b4133c34dbe35b700065d017, type: 3}
     m_SceneName: ViniScene
+--- !u!65 &845555996182483137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865012597677874886}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
+  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &2116959496630522435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1090,7 @@ GameObject:
   - component: {fileID: 6427790330965246624}
   - component: {fileID: 1544821955627461431}
   - component: {fileID: 4278916772399340332}
+  - component: {fileID: 3688868933453649716}
   m_Layer: 0
   m_Name: NoBtn
   m_TagString: Untagged
@@ -1258,6 +1287,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!65 &3688868933453649716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593989551178016042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
+  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &2676557099106866958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1594,7 @@ GameObject:
   - component: {fileID: 5124477427497269473}
   - component: {fileID: 5761087688664225621}
   - component: {fileID: 1975164161677328043}
+  - component: {fileID: 45069193825744205}
   m_Layer: 0
   m_Name: PauseGameButton
   m_TagString: Untagged
@@ -1771,6 +1814,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e375997e35108bc499e8858ebf3c605a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &45069193825744205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700740802062080465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
+  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &4184363746316906571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,6 +1843,7 @@ GameObject:
   - component: {fileID: 6871973435512679251}
   - component: {fileID: 8353797042585315067}
   - component: {fileID: 1387620520295616689}
+  - component: {fileID: 4445875072123477208}
   m_Layer: 0
   m_Name: YesBtn
   m_TagString: Untagged
@@ -1997,6 +2054,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a9b0517be81954faccf294e08f550a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4445875072123477208
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184363746316906571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
+  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &4245612346028127353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,6 +2360,7 @@ GameObject:
   - component: {fileID: 6503119592324010401}
   - component: {fileID: 4864429366194884133}
   - component: {fileID: 8095366759997396126}
+  - component: {fileID: 7007291865605641764}
   m_Layer: 0
   m_Name: RestartButton
   m_TagString: Untagged
@@ -2486,6 +2557,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!65 &7007291865605641764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4364855551042751693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
+  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &4561162533535377750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,6 +3006,7 @@ GameObject:
   - component: {fileID: 4653692525433047272}
   - component: {fileID: 319555551389459348}
   - component: {fileID: 7534578237982110948}
+  - component: {fileID: 6829338219519094105}
   m_Layer: 0
   m_Name: ResumeGameButton
   m_TagString: Untagged
@@ -3141,6 +3226,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e375997e35108bc499e8858ebf3c605a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6829338219519094105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6004623621143459277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
+  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &6183028166131593542
 GameObject:
   m_ObjectHideFlags: 0
@@ -3603,6 +3701,7 @@ GameObject:
   - component: {fileID: 6406872480282780392}
   - component: {fileID: 3236572063414777725}
   - component: {fileID: 6983615326306864350}
+  - component: {fileID: 1302733036735129600}
   m_Layer: 0
   m_Name: QuitGameButton
   m_TagString: Untagged
@@ -3799,6 +3898,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!65 &1302733036735129600
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7712118211070379555}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
+  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &7920811077119545851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,6 +3925,7 @@ GameObject:
   - component: {fileID: 2188929169334642800}
   - component: {fileID: 5178853934785107446}
   - component: {fileID: 2116715079974044626}
+  - component: {fileID: 7950880543709710963}
   m_Layer: 0
   m_Name: NoBtn
   m_TagString: Untagged
@@ -4009,6 +4122,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!65 &7950880543709710963
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920811077119545851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5053904, y: 0.08321824, z: 0.0069279717}
+  m_Center: {x: -0.0008474642, y: -0.0010585026, z: 0.0006633539}
 --- !u!1 &8606096625264900027
 GameObject:
   m_ObjectHideFlags: 0
