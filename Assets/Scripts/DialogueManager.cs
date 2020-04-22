@@ -174,6 +174,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     /// </summary>
     /// <param name="isGameWon"></param>
     public void PlayEndGameDialogue(bool isGameWon) {
+        audioDialogue.Stop();
         if (isGameWon) {
             StartCoroutine(PlayEntireDialogue(dialogueWin));
         } else {
