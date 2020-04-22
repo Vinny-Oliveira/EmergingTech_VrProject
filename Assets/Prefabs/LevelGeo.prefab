@@ -898,6 +898,7 @@ MonoBehaviour:
   roomLight: {fileID: 6833082499784424293}
   range: 100
   changer: 7
+  intensityBump: 10
 --- !u!1 &6833082499805627710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,7 +2003,7 @@ PrefabInstance:
     - target: {fileID: 2281721231902452634, guid: 100f804d1f0d29a41bbdbdcfdcdbf1c0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.7800293
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 2281721231902452634, guid: 100f804d1f0d29a41bbdbdcfdcdbf1c0,
         type: 3}
