@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using Valve.VR;
 
@@ -12,6 +13,7 @@ public class TimerManager : SingletonManager<TimerManager> {
     public GameObject gamePanel;
     public GameObject restartPanel;
     public LightChanger lightChanger;
+    public SceneField gameOverScene;
 
     /// <summary>
     /// Run the timer
@@ -48,5 +50,12 @@ public class TimerManager : SingletonManager<TimerManager> {
         gamePanel.SetActive(false);
         restartPanel.SetActive(true);
         lightChanger.StartLightIncrease();
+    }
+
+    /// <summary>
+    /// Load the game over scene
+    /// </summary>
+    public void LoadGameOverScene() {
+        SceneManager.LoadScene(gameOverScene);
     }
 }

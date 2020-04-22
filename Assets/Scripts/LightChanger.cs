@@ -117,5 +117,6 @@ public class LightChanger : SingletonManager<LightChanger> {
         }
 
         SfxManager.instance.PauseEverySfx();
+        TimerManager.instance.LoadGameOverScene();
     }
 }

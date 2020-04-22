@@ -554,7 +554,6 @@ GameObject:
   - component: {fileID: 8938876887388114201}
   - component: {fileID: 7040228225186524721}
   - component: {fileID: 3880365077857243101}
-  - component: {fileID: 5628437726811054046}
   - component: {fileID: 5279213790717975530}
   - component: {fileID: 7683971659647146787}
   m_Layer: 0
@@ -742,18 +741,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5628437726811054046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865012597677874886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f100a741b74ad4ab26b151f15e969b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &5279213790717975530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -779,6 +766,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cbfc2f263450549a2c07c610e05901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad:
+    m_SceneAsset: {fileID: 102900000, guid: cb624d53b4133c34dbe35b700065d017, type: 3}
+    m_SceneName: ViniScene
 --- !u!1 &2116959496630522435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,7 +1785,6 @@ GameObject:
   - component: {fileID: 4691514527115589662}
   - component: {fileID: 86223675040513014}
   - component: {fileID: 6871973435512679251}
-  - component: {fileID: 4186474110825893819}
   - component: {fileID: 8353797042585315067}
   - component: {fileID: 1387620520295616689}
   m_Layer: 0
@@ -1983,18 +1972,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4186474110825893819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4184363746316906571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f100a741b74ad4ab26b151f15e969b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &8353797042585315067
 BoxCollider:
   m_ObjectHideFlags: 0
